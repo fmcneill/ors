@@ -1,0 +1,63 @@
+;;; Action
+(Define-Class Action (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+;;; Inform
+(Define-Class Inform (?X) "Not supplied yet." :Def (And (Predicate ?X))) 
+
+;;; Agent-Needed
+(Define-Function Agent-Needed (?Agent-0) :-> ?Value "Not supplied yet." :Def (And (Agent ?Agent-0) (Action ?Value))) 
+
+;;; plantOne
+(Define-Frame Plant-One :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent) (At Alpha)) :Axioms ((Agent-Needed Plant-One Send-Water)))
+
+;;; plantZero
+(Define-Frame Plant-Zero :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent) (Treats Alpha Beta) :Axioms ((Agent-Needed Plant-Zero Send-Water) (Protect-Argument Treats 3 Argument-All Low-Protection) (Protect-Function Treats Function-All High-Protection))) 
+
+
+;;; Send-Water
+
+(Define-Individual Send-Water (Action) "Not supplied yet.")
+
+
+;;; PROTECTED
+
+;;; Function-Option
+(Define-Class Function-Option (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+;;; Argument-Option
+(Define-Class Argument-Option (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+;;; Protection-Level
+(Define-Class Protection-Level (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+;;; Protect-Function
+(Define-Function Protect-Function (?Relation ?Value) :-> ?Level "Not supplied yet." :Def (And (Relation ?Relation) (Function-Option ?Value) (Protection-Level ?Level)))
+
+;;; Protect-Argument
+(Define-Function Protect-Argument (?Relation ?Argument ?Value) :-> ?Level "Not supplied yet." :Def (And (Relation ?Relation) (Argument ?Argument) (Argument-Option ?Value) (Protection-Level ?Level)))
+
+;;; Function-All
+(Define-Individual Function-All (Function-Option) "Not supplied yet.")
+
+;;; Function-Arity
+(Define-Individual Function-Arity (Function-Option) "Not supplied yet.")
+
+;;; Argument-All
+(Define-Individual Argument-All (Argument-Option) "Not supplied yet.")
+
+;;; Argument-Value
+(Define-Individual Argument-Value (Argument-Option) "Not supplied yet.")
+
+;;; Argument-Class
+(Define-Individual Argument-Class (Argument-Option) "Not supplied yet.")
+
+;;; High-Protection
+(Define-Individual High-Protection (Protection-Level) "Not supplied yet.")
+
+;;; Low-Protection
+(Define-Individual Low-Protection (Protection-Level) "Not supplied yet.")
+
+;;; ~ PROTECTED
+
+
+

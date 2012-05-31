@@ -1,0 +1,143 @@
+(In-Package "ONTOLINGUA-USER")
+
+;;; Written by user Fionam from session "Session name not supplied [Tuesday, 25 January 2005, 03:10:57]" owned by group JUST-ME
+;;; Date: Jan 25, 2005  04:38
+;;; Definitions: 26
+
+
+(Define-Ontology
+     Sumo-Meta
+     (Frame-Ontology)
+   "Not supplied yet."
+   :Io-Package
+   "ONTOLINGUA-USER")
+
+
+(In-Ontology (Quote Sumo-Meta))
+
+
+
+;;; Patient
+
+(Define-Class Patient (?X) "Not supplied yet." :Def (And (Predicate ?X))) 
+
+
+;;; Agent2
+
+(Define-Individual Agent2 (Agent) "Not supplied yet.") 
+
+
+;;; Inform
+
+(Define-Class Inform (?X) "Not supplied yet." :Def (And (Predicate ?X))) 
+
+
+;;; Do-A
+
+(Define-Frame Do-A :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Action)) :Axioms ((Agent-Needed Do-A-Agent Do-A))) 
+
+
+;;; Refers
+
+(Define-Class Refers (?X) "Not supplied yet." :Def (And (Predicate ?X))) 
+
+
+;;; Performs
+
+(Define-Class Performs (?X) "Not supplied yet." :Def (And (Predicate ?X))) 
+
+
+;;; Pseudo-Rel
+
+(Define-Class Pseudo-Rel (?X) "Not supplied yet." :Def (And (Predicate ?X))) 
+
+
+;;; Action
+
+(Define-Class Action (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Agent
+
+(Define-Class Agent (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Agent1
+
+(Define-Individual Agent1 (Agent) "Not supplied yet.") 
+
+
+;;; Result
+
+(Define-Class Result (?X) "Not supplied yet." :Def (And (Predicate ?X))) 
+
+
+;;; Do-B-Agent
+
+(Define-Individual Do-B-Agent (Agent) "Not supplied yet.") 
+
+
+;;; Domain-Rel
+
+(Define-Class Domain-Rel (?X) "Not supplied yet." :Def (And (Predicate ?X))) 
+
+
+;;; Tell-Agent
+
+(Define-Frame Tell-Agent :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent)) :Axioms ((Agent-Needed Tell-Agent Tell))) 
+
+
+;;; My-Fact
+
+(Define-Class My-Fact (?X) "Not supplied yet." :Def (And (Predicate ?X))) 
+
+
+;;; Ask-Fact
+
+(Define-Class Ask-Fact (?X) "Not supplied yet." :Def (And (Predicate ?X))) 
+
+
+;;; Destination
+
+(Define-Class Destination (?X) "Not supplied yet." :Def (And (Predicate ?X))) 
+
+
+;;; Tell
+
+(Define-Individual Tell (Action) "Not supplied yet.") 
+
+
+;;; Transitive
+
+(Define-Class Transitive (?X) "Not supplied yet." :Def (And (Predicate ?X))) 
+
+
+;;; Knows
+
+(Define-Class Knows (?X) "Not supplied yet." :Def (And (Predicate ?X))) 
+
+
+;;; Wait-Fact
+
+(Define-Class Wait-Fact (?X) "Not supplied yet." :Def (And (Predicate ?X))) 
+
+
+;;; Do-B
+
+(Define-Frame Do-B :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Action)) :Axioms ((Agent-Needed Do-B-Agent Do-B))) 
+
+
+;;; Predicate
+
+(Define-Class Predicate (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Do-A-Agent
+
+(Define-Individual Do-A-Agent (Agent) "Not supplied yet.") 
+
+
+;;; Agent-Needed
+
+(Define-Function Agent-Needed (?Agent-0) :-> ?Value "Not supplied yet." :Def (And (Agent ?Agent-0) (Action ?Value))) 
+

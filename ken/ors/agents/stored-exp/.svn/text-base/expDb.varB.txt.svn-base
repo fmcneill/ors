@@ -1,0 +1,14 @@
+
+:- dynamic experienceDatabase/2.
+
+experienceDatabase(index,value).
+
+experienceDatabase([putInBasketAgent,putInBasket(shoppingAgent,bookShopGroup,ourMutualFriend)],[[[chooseThing(shoppingAgent,titchmarshMemoirs)],[chooseThing(shoppingAgent,titchmarshMemoirs),registeredMember(shoppingAgent,bookShopGroup),class(bookShopGroup,shoppingGroup),request]],[chooseThing(shoppingAgent,ourMutualFriend),chooseThing(shoppingAgent,titchmarshMemoirs),[domainA,[[book,agent],gardeningBook,book]],success]]).
+
+experienceDatabase([joinGroupAgentTwo,joinGroup(shoppingAgent,bookShopGroup)],[[[interest(bookShopGroup,shoppingAgent)],[interest(bookShopGroup,shoppingAgent),request]],[interest(shoppingAgent,bookShopGroup),interest(bookShopGroup,shoppingAgent),[switchArgs,interest],success]]).
+
+experienceDatabase([joinGroupAgentOne,joinGroup(shoppingAgent,bookShopGroup)],[[[],[request]],[none,meta,[incorrectAgent,_10787],success]]).
+
+experienceDatabase([putItemInBasketAgent,putItemInBasket(shoppingAgent,aiGroup,ourMutualFriend)],[[[class(aiGroup,shoppingGroup),class(aiGroup,shoppingGroup),class(aiGroup,shoppingGroup),class(aiGroup,shoppingGroup)],[class(aiGroup,shoppingGroup),class(aiGroup,shoppingGroup),class(aiGroup,shoppingGroup),class(aiGroup,shoppingGroup),request]],[group,shoppingGroup,[precondAA,class],success]]).
+
+experienceDatabase([putInBasketAgent,putInBasket(shoppingAgent,aiGroup,ourMutualFriend)],[[[class(aiGroup,shoppingGroup)],[class(aiGroup,shoppingGroup),request]],[group,shoppingGroup,[precondAA,class],success]]).

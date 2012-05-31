@@ -1,0 +1,101 @@
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/65/trunk/ken/ors/agents/morike-shopping
+END
+server.addr
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/65/trunk/ken/ors/agents/morike-shopping/server.addr
+END
+server.pl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/65/trunk/ken/ors/agents/morike-shopping/server.pl
+END
+addToBagAgentThy.pl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/65/trunk/ken/ors/agents/morike-shopping/addToBagAgentThy.pl
+END
+beanProductAgentThy.pl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/65/trunk/ken/ors/agents/morike-shopping/beanProductAgentThy.pl
+END
+dairyProductAgentThy.pl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/65/trunk/ken/ors/agents/morike-shopping/dairyProductAgentThy.pl
+END
+payForAgent.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/65/trunk/ken/ors/agents/morike-shopping/payForAgent.pl
+END
+payForAgentSig.pl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/65/trunk/ken/ors/agents/morike-shopping/payForAgentSig.pl
+END
+addToBagAgentOld.pl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/65/trunk/ken/ors/agents/morike-shopping/addToBagAgentOld.pl
+END
+addToBagAgent.pl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/65/trunk/ken/ors/agents/morike-shopping/addToBagAgent.pl
+END
+beanProductAgent.pl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/65/trunk/ken/ors/agents/morike-shopping/beanProductAgent.pl
+END
+planningAgent.pl
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/65/trunk/ken/ors/agents/morike-shopping/planningAgent.pl
+END
+addToBagAgentSig.pl
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/65/trunk/ken/ors/agents/morike-shopping/addToBagAgentSig.pl
+END
+beanProductAgentSig.pl
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/65/trunk/ken/ors/agents/morike-shopping/beanProductAgentSig.pl
+END
+dairyProductAgent.pl
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/65/trunk/ken/ors/agents/morike-shopping/dairyProductAgent.pl
+END
+dairyProductAgentSig.pl
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/65/trunk/ken/ors/agents/morike-shopping/dairyProductAgentSig.pl
+END
+payForAgentThy.pl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/65/trunk/ken/ors/agents/morike-shopping/payForAgentThy.pl
+END

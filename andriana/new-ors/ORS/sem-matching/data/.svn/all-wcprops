@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/92/trunk/andriana/new-ors/ORS/sem-matching/data
+END
+parse_wordnet.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/92/trunk/andriana/new-ors/ORS/sem-matching/data/parse_wordnet.py
+END
+synsets_info
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/92/trunk/andriana/new-ors/ORS/sem-matching/data/synsets_info
+END
+parse_ontologies.py
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/92/trunk/andriana/new-ors/ORS/sem-matching/data/parse_ontologies.py
+END
+words_n_synsets
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/92/trunk/andriana/new-ors/ORS/sem-matching/data/words_n_synsets
+END
+sumo_wordnet
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/92/trunk/andriana/new-ors/ORS/sem-matching/data/sumo_wordnet
+END
+parse_ontologies.pyc
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/92/trunk/andriana/new-ors/ORS/sem-matching/data/parse_ontologies.pyc
+END
+all_words
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/92/trunk/andriana/new-ors/ORS/sem-matching/data/all_words
+END
+docum_subcl_inst
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/92/trunk/andriana/new-ors/ORS/sem-matching/data/docum_subcl_inst
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/92/trunk/andriana/new-ors/ORS/sem-matching/data/README
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/65/trunk/ken/ors/translation
+END
+translateMetaOnt.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/65/trunk/ken/ors/translation/translateMetaOnt.pl
+END
+translateGoal.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/65/trunk/ken/ors/translation/translateGoal.pl
+END
+translateToProlog.pl
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/65/trunk/ken/ors/translation/translateToProlog.pl
+END
+translateToPDDL.pl
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/svn/!svn/ver/65/trunk/ken/ors/translation/translateToPDDL.pl
+END

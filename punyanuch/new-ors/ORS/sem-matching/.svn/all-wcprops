@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/117/trunk/punyanuch/new-ors/ORS/sem-matching
+END
+tf_idf.py
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/111/trunk/punyanuch/new-ors/ORS/sem-matching/tf_idf.py
+END
+bag_of_words.py
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/111/trunk/punyanuch/new-ors/ORS/sem-matching/bag_of_words.py
+END
+compute_nested_lists.py
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/111/trunk/punyanuch/new-ors/ORS/sem-matching/compute_nested_lists.py
+END
+bag_of_words.pyc
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/117/trunk/punyanuch/new-ors/ORS/sem-matching/bag_of_words.pyc
+END
+tf_idf.pyc
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/117/trunk/punyanuch/new-ors/ORS/sem-matching/tf_idf.pyc
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/111/trunk/punyanuch/new-ors/ORS/sem-matching/README
+END
+semantic_matcher.py
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/111/trunk/punyanuch/new-ors/ORS/sem-matching/semantic_matcher.py
+END

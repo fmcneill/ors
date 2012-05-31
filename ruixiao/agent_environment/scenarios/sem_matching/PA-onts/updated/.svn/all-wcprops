@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/106/trunk/new-ors/agent_environment/scenarios/sem_matching/PA-onts/updated
+END
+metaOnt.pl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/80/trunk/new-ors/agent_environment/scenarios/sem_matching/PA-onts/updated/metaOnt.pl
+END
+centralSig.pl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/106/trunk/new-ors/agent_environment/scenarios/sem_matching/PA-onts/updated/centralSig.pl
+END
+ont.in
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/!svn/ver/100/trunk/new-ors/agent_environment/scenarios/sem_matching/PA-onts/updated/ont.in
+END
+centralThy.pl
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/106/trunk/new-ors/agent_environment/scenarios/sem_matching/PA-onts/updated/centralThy.pl
+END
+preds.pl
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/!svn/ver/80/trunk/new-ors/agent_environment/scenarios/sem_matching/PA-onts/updated/preds.pl
+END
+theoSig.pl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/80/trunk/new-ors/agent_environment/scenarios/sem_matching/PA-onts/updated/theoSig.pl
+END
+theoThy.pl
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/!svn/ver/80/trunk/new-ors/agent_environment/scenarios/sem_matching/PA-onts/updated/theoThy.pl
+END

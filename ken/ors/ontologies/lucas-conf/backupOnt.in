@@ -1,0 +1,292 @@
+In-Package "ONTOLINGUA-USER")
+
+;;; Written by user Fionam from session "learners" owned by group UNIVERSE
+;;; Date: Nov 17, 2004  09:35
+;;; Definitions: 54
+
+
+(Define-Ontology
+     Sem-Web-Lucas
+     (Frame-Ontology)
+   "Not supplied yet."
+   :Io-Package
+   "ONTOLINGUA-USER")
+
+
+(In-Ontology (Quote Sem-Web-Lucas))
+
+
+
+;;; Place
+
+(Define-Class Place (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Register
+
+(Define-Axiom Register "Not supplied yet." := (=> (And (Accepted-Paper ?Agent ?Paper ?Conference Pseudo-Var) (Money ?Agent ?Amount) (Registration-Fee ?Conference ?Cost) (< ?Cost ?Amount)) (And (Registered ?Agent ?Conference Pseudo-Var) (= ?Newamount (- ?Amount ?Cost)) (Money ?Agent ?Newamount) (Not (Money ?Agent ?Amount))))) 
+
+
+;;; At-Goal
+
+(Define-Relation At-Goal (?Agent ?Goal-Class) "Not supplied yet." :Def (And (Agent ?Agent) (Goal-Class ?Goal-Class))) 
+
+
+;;; Dan
+
+(Define-Individual Dan (Agent) "Not supplied yet.") 
+
+
+;;; Graham
+
+(Define-Individual Graham (Agent) "Not supplied yet.") 
+
+
+;;; Goal
+
+(Define-Individual Goal (Goal-Class) "Not supplied yet.") 
+
+
+;;; Find-Accom-Info
+
+(Define-Axiom Find-Accom-Info "Not supplied yet." := (=> (Accepted-Paper ?Agent ?Paper ?Conference Pseudo-Var) (Accomodation-Info ?Conference Pseudo-Var))) 
+
+
+;;; Cade
+
+(Define-Frame Cade :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Conference) (Location Miami) (Registration-Fee 200)) :Axioms ((Accomodation-Info Cade 50))) 
+
+
+;;; Book-Accom
+
+(Define-Axiom Book-Accom "Not supplied yet." := (=> (And (Accomodation-Info ?Conference ?Cost) (Money ?Agent ?Amount) (< ?Cost ?Amount)) (And (Has-Accom ?Agent ?Conference Pseudo-Var) (= ?Newamount (- ?Amount ?Cost)) (Money ?Agent ?Newamount) (Not (Money ?Agent ?Amount))))) 
+
+
+;;; Money
+
+(Define-Function Money (?Agent-0) :-> ?Value "Not supplied yet." :Def (And (Agent ?Agent-0) (Number ?Value))) 
+
+
+;;; Has-Ticket
+
+(Define-Function Has-Ticket (?Agent-0) :-> ?Value "Not supplied yet." :Def (And (Agent ?Agent-0) (Confirmation-Number ?Value))) 
+
+
+;;; Conference
+
+(Define-Class Conference (?X) "Not supplied yet." :Def (And (Event ?X))) 
+
+
+;;; Accomodation-Info
+
+(Define-Function Accomodation-Info (?Conference-0) :-> ?Value "Not supplied yet." :Def (And (Conference ?Conference-0) (Confirmation-Number ?Value))) 
+
+
+;;; Joe
+
+(Define-Individual Joe (Agent) "Not supplied yet.") 
+
+
+;;; Currency
+
+(Define-Class Currency (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Edinburgh
+
+(Define-Frame Edinburgh :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of City)) :Axioms ((Flight Edinburgh Miami 300))) 
+
+
+;;; Action
+
+(Define-Class Action (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Isabelle-Paper-Dvi
+
+(Define-Individual Isabelle-Paper-Dvi (Dvi-Paper) "Not supplied yet.") 
+
+
+;;; Isabelle-Paper-Ps
+
+(Define-Individual Isabelle-Paper-Ps (Ps-Paper) "Not supplied yet.") 
+
+
+;;; City
+
+(Define-Class City (?X) "Not supplied yet." :Def (And (Place ?X))) 
+
+
+;;; Registration-Fee
+
+(Define-Function Registration-Fee (?Conference-0) :-> ?Value "Not supplied yet." :Def (And (Conference ?Conference-0) (Number ?Value))) 
+
+
+;;; Goal-Class
+
+(Define-Class Goal-Class (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Object
+
+(Define-Class Object (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Lucas
+
+(Define-Frame Lucas :Own-Slots ((Documentation "Not supplied yet.") (Has-Paper Isabelle-Paper-Dvi) (Instance-Of Agent) (Location Edinburgh)) :Axioms ((Money Lucas 1000))) 
+
+
+;;; Dollars
+
+(Define-Individual Dollars (Currency) "Not supplied yet.") 
+
+
+;;; Sterling
+
+(Define-Function Sterling (?Agent-0) :-> ?Value "Not supplied yet." :Def (And (Agent ?Agent-0) (Number ?Value))) 
+
+
+;;; Has-Accom
+
+(Define-Function Has-Accom (?Agent-0 ?Conference-1) :-> ?Value "Not supplied yet." :Def (And (Agent ?Agent-0) (Conference ?Conference-1) (Confirmation-Number ?Value))) 
+
+
+;;; Book-Flight
+
+(Define-Axiom Book-Flight "Not supplied yet." := (=> (And (Location ?Agent ?Agent-Loc) (Location ?Conference ?Conf-Loc) (Flight ?Agent-Loc ?Conf-Loc ?Price) (Money ?Agent ?Amount) (< ?Price ?Amount)) (And (Has-Ticket ?Agent Pseudo-Var) (= ?Newamount (- ?Amount ?Price)) (Money ?Agent ?Newamount) (Not (Money ?Agent ?Amount))))) 
+
+
+;;; Location
+
+(Define-Relation Location (?Thing ?Place) "Not supplied yet." :Def (And (Thing ?Thing) (Place ?Place))) 
+
+
+;;; Ewen
+
+(Define-Individual Ewen (Agent) "Not supplied yet.") 
+
+
+;;; Dollars-Malaysian-Pred
+
+(Define-Function Dollars-Malaysian-Pred (?Agent-0) :-> ?Value "Not supplied yet." :Def (And (Agent ?Agent-0) (Number ?Value))) 
+
+
+;;; Paper
+
+(Define-Class Paper (?X) "Not supplied yet." :Def (And (Object ?X))) 
+
+
+;;; Confirmation-Number
+
+(Define-Class Confirmation-Number (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Pseudo-Var
+
+(Define-Individual Pseudo-Var (Confirmation-Number) "Not supplied yet.") 
+
+
+;;; Miami
+
+(Define-Individual Miami (City) "Not supplied yet.") 
+
+
+;;; Accepted-Paper
+
+(Define-Function Accepted-Paper (?Agent-0 ?Paper-1 ?Conference-2) :-> ?Value "Not supplied yet." :Def (And (Agent ?Agent-0) (Paper ?Paper-1) (Conference ?Conference-2) (Confirmation-Number ?Value))) 
+
+
+;;; Agent-Needed
+
+(Define-Relation Agent-Needed (?Agent ?Action) "Not supplied yet." :Def (And (Agent ?Agent) (Action ?Action))) 
+
+
+;;; Attend-Conference
+
+(Define-Relation Attend-Conference (?Agent ?Conference) "Not supplied yet." :Def (And (Agent ?Agent) (Conference ?Conference))) 
+
+
+;;; Sophie
+
+(Define-Individual Sophie (Agent) "Not supplied yet.") 
+
+
+;;; Reimburse
+
+(Define-Axiom Reimburse "Not supplied yet." := (=> (And (Registered ?Agent ?Conference Pseudo-Var) (Registration-Fee ?Conference ?Conf-Cost) (Has-Accom ?Agent ?Conference Pseudo-Var) (Accomodation-Info ?Conference ?Room-Cost) (Has-Ticket ?Agent Pseudo-Var) (Location ?Agent ?Agent-Loc) (Location ?Conference ?Conf-Loc) (Flight ?Agent-Loc ?Conf-Loc ?Flight-Cost) (Money ?Agent ?Amount)) (And (Attend-Conference ?Agent ?Conference) (= ?Total (+ ?Conf-Cost ?Room-Cost ?Flight-Cost)) (= ?Newamount (+ ?Amount ?Total)) (Money ?Agent ?Newamount) (Not (Money ?Agent ?Amount))))) 
+
+
+;;; Agent
+
+(Define-Class Agent (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Colin
+
+(Define-Individual Colin (Agent) "Not supplied yet.") 
+
+
+;;; Ps-Paper
+
+(Define-Class Ps-Paper (?X) "Not supplied yet." :Def (And (Paper ?X))) 
+
+
+;;; Has-Paper
+
+(Define-Relation Has-Paper (?Agent ?Paper) "Not supplied yet." :Def (And (Agent ?Agent) (Paper ?Paper))) 
+
+
+;;; Event
+
+(Define-Class Event (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Pdf-Paper
+
+(Define-Class Pdf-Paper (?X) "Not supplied yet." :Def (And (Paper ?X))) 
+
+
+;;; Isabelle-Paper-Pdf
+
+* (Define-Individual Isabelle-Paper-Pdf (Pdf-Paper) "Not supplied yet.") 
+
+
+;;; Alison
+
+(Define-Individual Alison (Agent) "Not supplied yet.") 
+
+
+;;; Dollars-Pred
+
+(Define-Function Dollars-Pred (?Agent-0) :-> ?Value "Not supplied yet." :Def (And (Agent ?Agent-0) (Number ?Value))) 
+
+
+;;; Registered
+
+(Define-Function Registered (?Agent-0 ?Conference-1) :-> ?Value "Not supplied yet." :Def (And (Agent ?Agent-0) (Conference ?Conference-1) (Confirmation-Number ?Value))) 
+
+
+;;; Flight
+
+(Define-Function Flight (?Place-0 ?Place-1) :-> ?Value "Not supplied yet." :Def (And (Place ?Place-0) (Place ?Place-1) (Number ?Value))) 
+
+
+;;; Dvi-Paper
+
+(Define-Class Dvi-Paper (?X) "Not supplied yet." :Def (And (Paper ?X))) 
+
+
+;;; Convert-Paper
+
+(Define-Axiom Convert-Paper "Not supplied yet." := (=> (And (Has-Paper ?Agent ?Paper-Dvi) (Dvi-Paper ?Paper-Dvi)) (And (Has-Paper ?Agent ?Paper-Ps) (Ps-Paper ?Paper-Ps)))) 
+
+
+;;; Dollars-Us-Pred
+
+(Define-Function Dollars-Us-Pred (?Agent-0) :-> ?Value "Not supplied yet." :Def (And (Agent ?Agent-0) (Number ?Value))) 
+
+
+;;; Submit-Paper
+
+(Define-Axiom Submit-Paper "Not supplied yet." := (=> (And (Has-Paper ?Agent ?Paper-Ps) (Paper ?Paper-Ps)) (And (Accepted-Paper ?Agent ?Paper-Ps ?Conference Pseudo-Var)))) 

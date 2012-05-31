@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/svn/!svn/ver/106/trunk/new-ors/agent_environment/scenarios/shopping/SPA/putInBasketAgent
+END
+Agent.pl
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/60/trunk/new-ors/agent_environment/scenarios/shopping/SPA/putInBasketAgent/Agent.pl
+END
+AgentSig.pl
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/106/trunk/new-ors/agent_environment/scenarios/shopping/SPA/putInBasketAgent/AgentSig.pl
+END
+AgentThy.pl
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/48/trunk/new-ors/agent_environment/scenarios/shopping/SPA/putInBasketAgent/AgentThy.pl
+END

@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/65/trunk/ken/ors/agents/post
+END
+server.addr
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/65/trunk/ken/ors/agents/post/server.addr
+END
+planningAgent.pl
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/65/trunk/ken/ors/agents/post/planningAgent.pl
+END
+postIrelandAgentSig.pl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/65/trunk/ken/ors/agents/post/postIrelandAgentSig.pl
+END
+postUnitedKingdomAgent.pl
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/65/trunk/ken/ors/agents/post/postUnitedKingdomAgent.pl
+END
+server.pl
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/65/trunk/ken/ors/agents/post/server.pl
+END
+addressLetterAgentSig.pl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/65/trunk/ken/ors/agents/post/addressLetterAgentSig.pl
+END
+postIrelandAgentThy.pl
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/65/trunk/ken/ors/agents/post/postIrelandAgentThy.pl
+END
+addressLetterAgentThy.pl
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/65/trunk/ken/ors/agents/post/addressLetterAgentThy.pl
+END
+postUnitedKingdomAgentSig.pl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/65/trunk/ken/ors/agents/post/postUnitedKingdomAgentSig.pl
+END
+postUnitedKingdomAgentThy.pl
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/65/trunk/ken/ors/agents/post/postUnitedKingdomAgentThy.pl
+END
+postIrelandAgent.pl
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/svn/!svn/ver/65/trunk/ken/ors/agents/post/postIrelandAgent.pl
+END
+addressLetterAgent.pl
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/svn/!svn/ver/65/trunk/ken/ors/agents/post/addressLetterAgent.pl
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/svn/!svn/ver/92/trunk/andriana/new-ors/ORS/sem-matching
+END
+tf_idf.py
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/92/trunk/andriana/new-ors/ORS/sem-matching/tf_idf.py
+END
+bag_of_words.py
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/92/trunk/andriana/new-ors/ORS/sem-matching/bag_of_words.py
+END
+compute_nested_lists.py
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/92/trunk/andriana/new-ors/ORS/sem-matching/compute_nested_lists.py
+END
+bag_of_words.pyc
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/92/trunk/andriana/new-ors/ORS/sem-matching/bag_of_words.pyc
+END
+tf_idf.pyc
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/92/trunk/andriana/new-ors/ORS/sem-matching/tf_idf.pyc
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/92/trunk/andriana/new-ors/ORS/sem-matching/README
+END
+semantic_matcher.py
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/92/trunk/andriana/new-ors/ORS/sem-matching/semantic_matcher.py
+END

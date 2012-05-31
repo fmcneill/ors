@@ -1,0 +1,665 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en"><head><link media="all" 
+href="DrinkingCup_files/widget41.css" type="text/css" rel="stylesheet">
+
+<!-- InstanceBegin template="/Templates/default.dwt.jsp" codeOutsideHTMLIsLocked="true" -->
+
+
+<!-- InstanceBeginEditable name="setup" -->
+
+
+<!-- InstanceEndEditable -->
+<title>Info Centre - Cup-drinking - NCT</title>
+
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="keywords" content="">
+<meta name="description" content="">
+
+
+<meta name="searchfilter" content="infocentre">
+<link rel="stylesheet" href="DrinkingCup_files/style.css" 
+type="text/css" media="screen">
+<link rel="stylesheet" href="DrinkingCup_files/print.css" 
+type="text/css" media="print">
+<!--[if IE]>
+<link rel="stylesheet" href="/assets/css/ie_style.css" type="text/css" media="screen">
+<![endif]-->
+<!--[if IE 5]>
+<link rel="stylesheet" href="/assets/css/ie_5_style.css" type="text/css" media="screen">
+<![endif]-->
+<!--[if IE 6]>
+<link rel="stylesheet" href="/assets/css/ie_6_style.css" type="text/css" media="screen">
+<![endif]-->
+<!--[if IE 7]>
+<link rel="stylesheet" href="/assets/css/ie_7_style.css" type="text/css" media="screen">
+<![endif]-->
+<link rel="shortcut icon" href="http://www.nct.org.uk/favicon.ico">
+
+<script type="text/javascript" src="DrinkingCup_files/newwin.js"></script>
+<script type="text/javascript" src="DrinkingCup_files/scripts.js"></script>
+
+<!-- InstanceBeginEditable name="head" -->
+
+
+<link rel="stylesheet" type="text/css" 
+href="DrinkingCup_files/info-centre.css">
+
+
+
+<script src="DrinkingCup_files/jquery_003.js" type="text/javascript"></script>
+<script src="DrinkingCup_files/jquery_002.js" type="text/javascript"></script>
+<script src="DrinkingCup_files/jquery.js" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+$(function() {
+
+
+$('#box_stages *').tooltip({
+	delay: 0,
+	showURL: false,
+	showBody: " - ",
+	fade: 0,
+	opacity: 99
+});
+
+
+});
+</script>
+
+
+
+<!-- InstanceEndEditable -->
+</head><body class="page424 columns3 theme-ic"><div id="_atssh" 
+style="visibility: hidden; height: 1px; width: 1px; position: absolute; 
+z-index: 100000;"><iframe src="DrinkingCup_files/sh21.html" 
+style="height: 1px; width: 1px; position: absolute; z-index: 100000; 
+border: 0pt none; left: 0pt; top: 0pt;" id="_atssh359"></iframe></div>
+
+<div id="page">
+	
+
+<!--jsearch-ignore-->
+<ul class="access">
+	<li><a href="#content" title="Skip to content">skip to content</a></li>
+</ul>
+<!--jsearch-end-ignore-->
+
+<div id="mast">
+	<a href="http://www.nct.org.uk/home" title="Return to homepage"><img 
+src="DrinkingCup_files/corp-logo.gif" alt="NCT" id="corplogo"></a>
+	<span id="tagline">Supporting you to become the parent you want to be</span>
+	<div id="sitesearch">
+	<form action="/search" method="post" name="sitesearchFRM" 
+id="sitesearchFRM">
+		<fieldset>
+			<legend><span>Site search</span></legend>
+			<div class="field">
+				<div class="lbl"><label for="sitesearchFRM_keywords">Keywords</label></div>
+				<input name="keywords" id="sitesearchFRM_keywords" class="formTEXT" 
+value="Site search" onfocus="if (this.value=='Site search') {this.value =
+ ''};" onblur="if (this.value=='') {this.value = 'Site search'};" 
+type="text">
+   
+   				<div class="lbl"><label for="sitesearchFRM_area">Area</label></div>
+             
+                <select id="sitesearchFRM_area" name="area">
+                	<option selected="selected" value="">Entire Site</option>
+                	<option value="infocentre">Info Centre</option>
+                	<option value="courses">Courses</option>
+                	<option value="nns">Nearly New Sales</option>
+                	<option value="events">Events</option>
+                	<option value="branches">Branches</option>
+                 </select>  
+
+				<input src="DrinkingCup_files/btn_search.gif" alt="Search" 
+class="srchBTN" type="image">
+			</div>
+		</fieldset>
+	</form>
+</div>
+	
+
+	<div id="header-links">
+		<ul class="sitewide-links">
+			
+				
+				<li class="separator"><a title="contact-us" 
+href="http://www.nct.org.uk/contact-us">Contact us</a></li>
+			
+				
+				<li class="separator"><a title="sitemap" 
+href="http://www.nct.org.uk/sitemap">Sitemap</a></li>
+			
+				
+				<li class="separator"><a title="members" 
+href="http://www.nct.org.uk/members">Members' area</a></li>
+			
+				
+				<li><a title="jobs" href="http://www.nct.org.uk/about-us/jobs">Jobs</a></li>
+			
+		</ul>
+	</div>
+
+	<div class="clear"></div>
+</div>
+	<hr class="nocss">	
+	<!--jsearch-ignore-->
+<div id="main-nav">
+<!--jsearch-ignore-->
+<div id="nav1">
+	<ul id="nav-list1">
+		
+		<li id="nav1-home" class="separator"><a href="http://www.nct.org.uk/" 
+title="Home">Home</a></li>
+		<li id="nav1-about-us" class="separator"><a 
+href="http://www.nct.org.uk/about-us" title="About us">About us</a></li>
+		<li id="nav1-support-us" class="separator"><a 
+href="http://www.nct.org.uk/support-us" title="Support us">Support us</a></li>
+		<li id="nav1-in-your-area" class="separator"><a 
+href="http://www.nct.org.uk/in-your-area" title="In your area">In your 
+area</a></li>
+		<li id="nav1-info-centre" class="separator"><a 
+href="http://www.nct.org.uk/info-centre" title="Info centre" 
+class="active">Info centre</a></li>
+		<li id="nav1-professional" class="separator"><a 
+href="http://www.nct.org.uk/professional" title="Health Professionals">Health
+ Professionals</a></li>
+		<li id="nav1-press-office" class="separator"><a 
+href="http://www.nct.org.uk/press-office" title="Welcome to the NCT 
+Media Centre">Media centre</a></li>
+		<li id="nav1-shop" class="separator"><a 
+href="http://www.nct.org.uk/shop" title="Shop">Shop</a></li>
+		<li id="nav1-forums" class="separator"><a 
+href="http://www.nct.org.uk/info-centre/getting-help/egroups" 
+title="Forums">Forums</a></li>
+		<li id="nav1-campaign"><a href="http://www.nct.org.uk/active/network" 
+title="Take Action">Campaigns</a></li>
+		
+	</ul><div class="clear"></div></div>
+<!--jsearch-end-ignore-->
+
+<div id="nav2"><ul id="nav2-list"><li id="nav2-decisions-decisions" 
+class="separator "><a 
+href="http://www.nct.org.uk/info-centre/decisions-decisions">Decisions, 
+decisions...</a></li><li id="nav2-how_do_i" class="separator "><a 
+href="http://www.nct.org.uk/info-centre/how_do_i">How do I?</a></li><li 
+id="nav2-information2" class="separator "><a 
+href="http://www.nct.org.uk/info-centre/information2">Information</a></li><li
+ id="nav2-getting-help" class="separator "><a 
+href="http://www.nct.org.uk/info-centre/getting-help">Getting Help</a></li><li
+ id="nav2-policy"><a 
+href="http://www.nct.org.uk/about-us/what-we-do/policy">Policies &amp; 
+evidence</a></li></ul><div class="clear"></div></div>
+</div>
+<hr class="nocss">
+<!--jsearch-end-ignore-->
+	<hr class="nocss">	
+	<div id="content-wrapper">
+		<div id="content">
+			<div id="main-content">
+				
+<div id="crumbs">
+	<ul>
+	<li>You are here :</li><li><a href="http://www.nct.org.uk/home">Home</a></li><li>»
+ <a title="Info centre" href="http://www.nct.org.uk/info-centre">Info 
+centre</a></li>
+	</ul>
+</div>
+
+				<h1><span>Info Centre - Cup-drinking</span></h1>
+
+				
+				<!-- InstanceBeginEditable name="content" -->
+                
+				<!--jsearch-ignore-->
+				
+				<!--jsearch-end-ignore-->
+                
+                	
+
+				<!-- InstanceEndEditable -->
+				<p><span></span><a 
+href="http://www.nctshop.co.uk/Doidy-Cup/productinfo/2003" 
+target="_blank" title="Doidy Cup" 
+onclick="javascript:urchinTracker('/shop/doidycup1');"><img 
+src="DrinkingCup_files/doidy.jpg" alt="Doidy cup" height="136" 
+width="191" align="right"></a><span>Nowadays ‘no spill’ cups are 
+advertised as essential equipment for modern child rearing, saving your 
+furnishings from ruin, and promoting independence for growing babies and
+ toddlers. But there is a bewildering choice of feeding cups available, 
+and parents can face a dilemma when deciding which drinks are the 
+healthiest.</span><span>In fact, there are growing concerns among 
+dentists that the way these ‘no spill’ cups are used may be damaging 
+children’s teeth. </span></p><p><span>Frequently sipping squash or juice
+ throughout the day means that a child’s teeth and gums are constantly 
+bathed in sweet, acidic liquids, leading to tooth decay (dental caries) 
+and erosion.</span><span>&nbsp;</span></p><h3><span></span><span>What 
+does your child need to drink?</span></h3><p><strong><span></span></strong><span>In
+ the early days it’s straightforward – babies who are not on solids 
+rarely need additional fluids. In hot weather, however, your baby may 
+seem thirsty. If you’re bottle feeding your baby and don’t think that 
+she needs more formula, you can offer her cooled, boiled water from a 
+bottle or cup. </span></p><p><span>Breastfed babies can be fed more 
+frequently because the energy content of breastmilk changes as the feed 
+continues. Once weaning begins at around six months, older babies and 
+children who are allowed to drink any fluid other than plain water 
+freely throughout the day may fill up on calories from these drinks, 
+reducing their appetite for milk or solid foods. </span></p><p><span>This
+ makes it difficult for the child to get enough nutrients, and may lead 
+to deficiencies over a period of time, especially anaemia due to lack of
+ iron. </span><span>Dieticians recommend that babies should be 
+introduced to drinking from a cup by six months at the latest, and the 
+use of a bottle actively discouraged after one year.</span><span>&nbsp;</span></p><h3><span></span><span>How
+ does tooth damage occur?</span></h3><p><span></span><span>T</span><span>ooth
+ decay occurs when the bacteria in our mouths digest some of the sugar 
+from our foods and drinks, forming acids that can weaken the tooth 
+enamel. As the enamel on milk teeth is thinner, babies and children are 
+vulnerable to tooth decay and the process can begin before teeth are 
+fully erupted, which is why it is important to clean your baby’s teeth 
+and gums. </span></p><p><span>Untreated decay spreads quickly, and can 
+result in an infection or toothache.</span><span>Although there are many
+ natural foods and drinks other than pure sugar that can cause tooth 
+damage, artificial sweeteners are not permitted in foods for children 
+under three years of age. </span></p><p><span>It is the acid, which is 
+present even in sugar-free varieties of fruit juices, fizzy drinks and 
+squashes, that causes dental erosion – the gradual wear of the surfaces 
+of the teeth. These drinks are so popular that nearly half of children 
+in the UK have some dental erosion by the age of six.</span><span>&nbsp;</span></p><h3><span></span><span>Don’t
+ panic</span></h3><p><span></span><span>There is no need to panic and 
+ban all sugary or acidic drinks from your child’s diet, but it is a good
+ idea to limit their consumption. It is the frequency with which such 
+drinks are consumed which determines the danger of tooth decay and 
+erosion. </span></p><p><span>Dentists advise that thirsty children are 
+given only plain water to drink between meals, with other drinks kept 
+for supervised consumption during meal times, and then in open cups.</span></p><p><span></span><span>Parents
+ and carers should be particularly wary of allowing babies and children 
+of any age to fall asleep sucking on a bottle or cup containing any 
+sugary drink – including milk. </span></p><p><span>During sleep the flow
+ of saliva decreases, allowing the sugary liquids to pool around the 
+child’s teeth for an extended period of time.&nbsp;</span><span>&nbsp;</span></p><h3><span></span><span>Fruit
+ juice</span></h3><p><strong><span></span></strong><span>Fruit juice can
+ be an occasional addition to your childs diet during the weaning period
+ as it contains vitamin C, which aids the absorption of iron.<span>&nbsp;
+ </span></span></p><p><span><span></span>Fruit juice is often seen by 
+parents as a healthy alternative to squash, but it still contains sugars
+ and acids that can harm tooth enamel. Juice should be given to your 
+child sparingly and well diluted, as part of meal times. </span></p><p><span>One
+ Community Dental Service suggests that the juice to water ratio should 
+be one part juice to ten parts water.</span><span>&nbsp;</span></p><h3><span></span><span>Choosing
+ and using a cup</span></h3><p><strong><span></span></strong><span>The 
+latest advice from dentists is to avoid no-spill designs, instead 
+choosing a cup that spills when tipped – either an open cup, or a lidded
+ design that allows liquid to flow freely.</span></p><p><span></span><span>Teaching
+ babies to drink straight from an open cup is time consuming and messy, 
+but it avoids the need for further and unnecessary transitions from 
+bottle, to spout, to open cup. </span></p><p><span>Sarah panicked when 
+she was due to return to work and her six month old daughter refused to 
+use a bottle or trainer cup, but she followed advice to try an open cup 
+instead, ‘Hannah continued to refuse bottles and spouts, but staff at 
+her nursery were able to feed her my expressed milk a little at a time 
+from an open cup.’</span></p><p><span></span><span>Babies can begin 
+drinking from an open cup from birth. Midwives sometimes suggest that if
+ a breastfed baby requires any supplementation, milk is given from a cup
+ rather than a bottle to avoid the possibility of nipple confusion. </span></p><p><span>Young
+ babies drink with a lapping action, which gradually develops into 
+drinking. Initially, your baby will continue to get most of her liquids 
+as milk from either breast or bottle, so don’t worry if she becomes 
+frustrated and wants to stop after only a tiny amount. </span></p><p><span>Later
+ on, if she wants a drink between meals, whenever practical offer her 
+plain water from a cup. Gradually, drinking from a cup will become 
+second nature.</span><span>&nbsp;</span></p><p><span></span><strong><span>Remember:
+ </span></strong><span>Try to make things at your baby’s pace, offering a
+ drink from a cup as part of each meal<span>&nbsp; </span>- when 
+possible for you and without pressuring her! </span><span>Take care over
+ cleaning all parts of cups, particularly awkwardly shaped valves and 
+spouts, as they can rapidly become a breeding ground for bacteria.</span><span>&nbsp;</span></p><h3><span></span><span>Want
+ to know more?</span></h3><p><span>British Dental Health Foundation<span>&nbsp;
+ </span><a href="http://www.dentalhealth.org.uk/">http://www.dentalhealth.org.uk</a>
+ </span></p><p><span>If you would like to use a cup, NCT Shop stocks <a 
+href="http://www.nctshop.co.uk/PRODUCT-TITLE/productinfo/2003/" 
+target="_blank" onclick="javascript:urchinTracker('/shop/doidycup2');">Doidy
+ Cups</a>.</span></p><span><p><em>Page lasted updated 2008.</em></p></span><span><span><a
+ href="http://www.nctsales.co.uk/prodshow.asp?id=750"></a></span></span>
+	
+				
+
+    
+
+				
+	<!-- 424 - 0 -->	
+	
+
+			</div>
+			<hr class="nocss">
+			<div id="subcontent">
+				<!-- InstanceBeginEditable name="subcontent" -->
+
+		<!-- InstanceEndEditable -->	
+				<!-- promotions --><!--jsearch-ignore--><div id="promocol"><div 
+class="advert"><div id="promotion1"><a 
+href="http://www.nct.org.uk/promotions/redirect/3/global/0"><img 
+src="DrinkingCup_files/nct-join-us.gif" alt="Join NCT"></a></div></div><div
+ class="advert"><div id="promotion2"><a 
+href="http://www.nct.org.uk/promotions/redirect/7/global/0"><img 
+src="DrinkingCup_files/nct-shop-at.gif" alt="Visit our shop and support 
+the NCT"></a></div></div><div class="advert"><div id="promotion1"><a 
+href="http://www.nct.org.uk/promotions/redirect/91/page/20"><img 
+src="DrinkingCup_files/family_163x120_voucher.gif" alt=""></a></div></div><div
+ class="advert"><div id="promotion2"><a 
+href="http://www.nct.org.uk/promotions/redirect/63/page/20"><img 
+src="DrinkingCup_files/nct-sign-up.gif" alt="Order a copy of Stepping 
+Stones - your free NCT eGuide to becoming a parent"></a></div></div><div
+ class="advert"><div id="promotion3"><a 
+href="http://www.nct.org.uk/promotions/redirect/40/page/20"><img 
+src="DrinkingCup_files/Button-Bumps.jpg" alt="Order your free pregnancy 
+magazine now"></a></div></div><div class="advert"><div id="promotion4"><a
+ href="http://www.nct.org.uk/promotions/redirect/28/page/20"><img 
+src="DrinkingCup_files/nct-activist-ANIMATED-GIF.jpg" alt="NCT Active - 
+Join our campaign network"></a></div></div></div><!--jsearch-end-ignore-->
+
+
+				<!--jsearch-ignore--><div id="adcol"><div class="advert"><div 
+id="advert1"><a 
+href="http://www.nct.org.uk/adverts/redirect/100/page/20" 
+onclick="newWin('http://www.nct.org.uk/adverts/redirect/100/page/20');return
+ false"><img src="DrinkingCup_files/1NCT-WED-AD-163X163.gif" alt="NCT 
+Marketplace"></a></div></div><div class="advert"><div id="advert2"><a 
+href="http://www.nct.org.uk/adverts/redirect/47/page/20" 
+onclick="newWin('http://www.nct.org.uk/adverts/redirect/47/page/20');return
+ false"><img 
+src="DrinkingCup_files/Button-PreparingForParenthood-externalSites.jpg" 
+alt=""></a></div></div><div class="advert"><div id="advert3"><a 
+href="http://www.nct.org.uk/adverts/redirect/164/page/20" 
+onclick="newWin('http://www.nct.org.uk/adverts/redirect/164/page/20');return
+ false"><img 
+src="DrinkingCup_files/Alton-Towers-advert-163pxby163px-button.jpg" 
+alt=""></a></div></div><div class="advert"><div id="advert4"><a 
+href="http://www.nct.org.uk/adverts/redirect/168/page/20" 
+onclick="newWin('http://www.nct.org.uk/adverts/redirect/168/page/20');return
+ false"><img src="DrinkingCup_files/1CMTP-90px-by-163px-Button.gif" 
+alt="Cheeky Monkeys Tea Party"></a></div></div><div class="advert"><div 
+id="advert5"><a 
+href="http://www.nct.org.uk/adverts/redirect/170/page/20" 
+onclick="newWin('http://www.nct.org.uk/adverts/redirect/170/page/20');return
+ false"><img src="DrinkingCup_files/1nct.gif" alt="Will writing service"></a></div></div><div
+ class="advert" id="advertise"><div class="con"><a 
+href="http://www.nct.org.uk/support-us/corporate-support/advertising" 
+title="Find out how to advertise on this site">Advertise here</a></div></div></div><!--jsearch-end-ignore-->
+
+
+			</div>	
+			<hr class="nocss">
+		</div>
+		
+		<div id="column3">
+			<!--jsearch-ignore-->
+			<div id="sub-nav">
+				
+
+
+
+
+
+
+
+				
+
+
+
+
+
+
+
+<h3 class="heading_stagestopics">Browse by stage</h3>
+<ul class="list_stagestopics">
+
+
+
+
+
+<li><a href="http://www.nct.org.uk/info-centre/browse-1">Pregnancy: 1st 
+trimester</a></li>
+
+
+
+
+
+
+
+<li><a href="http://www.nct.org.uk/info-centre/browse-2">Pregnancy: 2nd 
+trimester</a></li>
+
+
+
+
+
+<li><a href="http://www.nct.org.uk/info-centre/browse-3">Pregnancy: 3rd 
+trimester</a></li>
+
+
+
+
+
+
+
+<li><a href="http://www.nct.org.uk/info-centre/browse-6">Labour and 
+birth</a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="http://www.nct.org.uk/info-centre/browse-7">Life with your 
+newborn</a></li>
+
+
+
+
+
+
+
+<li><a href="http://www.nct.org.uk/info-centre/browse-8">Life with your 
+older baby</a></li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</ul>
+
+<h3 class="heading_stagestopics">Browse by topic</h3>
+<ul class="list_stagestopics">
+
+
+
+<li><a href="http://www.nct.org.uk/info-centre/browse-16">Your health 
+during pregnancy</a></li>
+
+
+
+
+
+
+
+<li><a href="http://www.nct.org.uk/info-centre/browse-11">Screening and 
+testing</a></li>
+
+
+
+
+
+
+
+
+
+<li><a href="http://www.nct.org.uk/info-centre/browse-10">Pregnancy/labour
+ complications/difficulties</a></li>
+
+
+
+
+
+
+
+<li><a href="http://www.nct.org.uk/info-centre/browse-17">Your labour</a></li>
+
+
+
+
+
+<li><a href="http://www.nct.org.uk/info-centre/browse-12">The birth of 
+your baby</a></li>
+
+
+
+
+
+
+
+<li><a href="http://www.nct.org.uk/info-centre/browse-5">Feeding your 
+baby</a></li>
+
+
+
+
+
+
+
+<li><a href="http://www.nct.org.uk/info-centre/browse-13">Your baby's 
+health</a></li>
+
+
+
+
+
+<li><a href="http://www.nct.org.uk/info-centre/browse-15">Your feelings 
+after the birth, and as a parent</a></li>
+
+
+
+
+
+<li><a href="http://www.nct.org.uk/info-centre/browse-14">Your body 
+after the birth</a></li>
+
+
+
+
+
+<li><a href="http://www.nct.org.uk/info-centre/browse-4">Babycare and 
+your baby's development</a></li>
+
+
+
+
+
+<li><a href="http://www.nct.org.uk/info-centre/browse-9">Practical 
+issues</a></li>
+
+
+
+
+
+<li><a href="http://www.nct.org.uk/info-centre/browse-20">Finances</a></li>
+
+
+
+</ul>
+
+
+
+
+<!--jsearch-ignore-->
+	<div id="site-tools">  
+    	<h4>Site tools</h4> 
+			<ol id="sitetools-list"><li id="tool-print"><a title="Print this 
+page" rel="noindex,nofollow" href="#" onkeydown="window.print();" 
+onclick="window.print();">Print this page</a></li><li id="tool-send"><a 
+title="Email this link to a friend" rel="noindex,nofollow" 
+href="http://www.nct.org.uk/send-to-a-friend?url=%2Finfo-centre%2Finformation%2Fview-67">Email
+ to a friend</a></li><li id="tool-book"><a title="Info Centre - 
+Cup-drinking - NCT" 
+href="http://www.nct.org.uk/info-centre/information/view-67">Bookmark 
+this link</a></li><li id="tool-addthis"><script type="text/javascript">var addthis_pub="nctcharity";var addthis_options='delicious,digg,facebook,twitter,google,linkedin,reddit,stumbleupon,more';</script>
+<a href="http://www.addthis.com/bookmark.php?v=20" onmouseover="return 
+addthis_open(this, '', '[URL]', '[TITLE]')" onmouseout="addthis_close()"
+ onclick="return addthis_sendto()"><img 
+src="DrinkingCup_files/sm-share-en.gif" alt="Bookmark and Share" 
+style="border: 0pt none;" height="16" width="83"></a><script type="text/javascript" src="DrinkingCup_files/addthis_widget.js"></script></li></ol>
+    </div>
+<script type="text/javascript" src="DrinkingCup_files/bookmark.js"></script>
+<!--jsearch-end-ignore-->
+
+				<!-- InstanceBeginEditable name="subnav" -->
+				
+				<!-- InstanceEndEditable -->
+			</div>
+			<hr class="nocss">
+			<!--jsearch-end-ignore-->
+			
+			
+
+	<div class="subcontent"><a 
+href="http://www.nct.org.uk/info-centre/information/view-117"><img 
+src="DrinkingCup_files/swineflu.jpg" alt="Worried about swine flu? Read 
+our FAQ now"></a></div>
+	<div class="subcontent"><a 
+href="http://www.nct.org.uk/info-centre/getting-help/helplines"><img 
+src="DrinkingCup_files/nct-helpline-button.gif" alt="Need some help? 
+Call our helplines and speak to one of our experts"></a></div>
+	
+
+		</div>
+		
+		<div class="clear"></div>
+	</div>
+	
+<!--jsearch-ignore-->
+<div id="foot">
+	<ul>
+		<li id="links"><ul class="sitewide-links">
+					<li class="separator"><a title="home" href="http://www.nct.org.uk/">Home</a></li><li
+ class="separator"><a title="about-site" 
+href="http://www.nct.org.uk/about-site">About site</a></li><li 
+class="separator"><a title="facebook" 
+href="http://www.new.facebook.com/profile.php?id=1137902857&amp;ref=name#/pages/NCT/34689307141?ref=mf">Facebook</a></li><li
+ class="separator"><a title="privacy" 
+href="http://www.nct.org.uk/privacy">Privacy</a></li><li><a 
+title="twitter" href="http://twitter.com/NCTcharity">Twitter</a></li></ul></li>
+		<li id="copyright" class="fa">© 2010 NCT Alexandra House, Oldham 
+Terrace, London, W3 6NH
+			</li>
+		<li id="regno">Reg. Charity No. 801395&nbsp;&nbsp;Reg. Company No. 
+2370573 </li>
+		
+	</ul>
+</div>
+<script src="DrinkingCup_files/urchin.js" type="text/javascript"></script>
+ 
+<script type="text/javascript"> 
+	_uacct = "UA-1436592-1"; 
+	urchinTracker(); 
+</script>
+<!--jsearch-end-ignore-->
+
+
+
+</div>
+
+<!-- InstanceEnd --><div style="display: none;" id="tooltip"><h3></h3><div
+ class="body"></div><div class="url"></div></div></body></html>

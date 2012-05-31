@@ -1,0 +1,176 @@
+(Define-Ontology
+     Sem-Web-Lucas
+     (Frame-Ontology)
+   "Not supplied yet."
+   :Io-Package
+   "ONTOLINGUA-USER")
+
+
+(In-Ontology (Quote Shopping))
+
+
+;;; Item
+
+(Define-Class Item (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+
+;;; Agent
+
+(Define-Class Agent (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+
+;;; Product
+
+(Define-Class Product (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+
+;;; Bean-Product
+
+(Define-Class Bean-Product (?X) "Not supplied yet." :Def (And (Item ?X)))
+
+
+;;; Dairy-Product
+
+(Define-Class Dairy-Product (?X) "Not supplied yet." :Def (And (Item ?X)))
+
+
+;;; Beans
+
+(Define-Individual Beans (Bean-Product) "Not supplied yet.")
+
+
+;;; Currency
+
+(Define-Class Currency (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+
+;;; Francs
+
+(Define-Individual Francs (Currency) "Not supplied yet.")
+
+
+;;; Euros
+
+(Define-Individual Euros (Currency) "Not supplied yet.")
+
+
+;;; Confirmation-Number
+
+(Define-Class Confirmation-Number (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+
+;;; Tag-Number
+
+(Define-Individual Tag-Number (Confirmation-Number) "Not supplied yet.")
+
+
+;;; Receipt-Number
+
+(Define-Individual Receipt-Number (Confirmation-Number) "Not supplied yet.")
+
+
+;;; Thirty
+
+(Define-Individual Thirty (Thing) "Not supplied yet.")
+
+
+;;; Abcke
+
+(Define-Individual Abcke (Thing) "Not supplied yet.")
+
+
+;;; Ten
+
+(Define-Individual Ten (Price) "Not supplied yet.")
+
+
+;;; Agency
+
+(Define-Class Agency (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+
+;;; Price
+
+(Define-Class Price (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+
+;;; Our-Agent
+
+(Define-Frame Our-Agent :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent)) :Axioms ((Has-Money Our-Agent Thirty [(Start)])))
+
+
+;;; Butter
+
+(Define-Frame Butter :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Bean-Product) (Cost Ten [start])) :Axioms ((On-Sale Butter Abcke [(Start)])))
+
+
+; (Define-Individual Butter (Bean-Product) "Not supplied yet.")
+
+
+;;; Has
+
+(Define-Relation Has (?Agent ?Item ?Situation) "Not supplied yet." :Def (And (Agent ?Agent) (Item ?Item) (Sit-Var ?Situation)))
+
+
+;;; Picking-Agency
+
+(Define-Relation Picking-Agency (?Agent ?Product ?Situation) "Not supplied yet." :Def (And (Agent ?Agent) (Product ?Product) (Sit-Var ?Situation)))
+
+
+;;; On-Sale
+
+(Define-Relation On-Sale (?Item ?Tag-Number ?Situation) "Not supplied yet." :Def (And (Item ?Item) (Thing ?Tag-Number) (Sit-Var ?Situation)))
+
+
+;;; Picked-Up
+
+(Define-Relation Picked-Up (?Item ?Tag-Number ?Situation) "Not supplied yet." :Def (And (Item ?Item) (Thing ?Tag-Number) (Sit-Var ?Situation)))
+
+
+;;; Paid-For
+
+(Define-Relation Paid-For (?Agent ?Item ?Situation) "Not supplied yet." :Def (And (Agent ?Agent) (Item ?Item) (Sit-Var ?Situation)))
+
+
+;;; Cost
+
+(Define-Relation Cost (?Item ?Price ?Situation) "Not supplied yet." :Def (And (Item ?Item) (Price ?Price) (Sit-Var ?Situation)))
+
+
+;;; Has-Money
+
+(Define-Relation Has-Money (?Agent ?Amount ?Situation) "Not supplied yet." :Def (And (Agent ?Agent) (Thing ?Amount) (Sit-Var ?Situation)))
+
+
+;;; Pick-Up-Bean
+
+(Define-Axiom Pick-Up-Bean "Not supplied yet." := (=> (And (On-Sale ?Item ?Tag-Number ?Sit1) (Bean-Product ?Item) (Cost ?Item ?Price ?Sit1)) (And (Picked-Up ?Item ?Tag-Number ?Sit2))))
+
+
+;;; Pick-Up-Dairy
+
+(Define-Axiom Pick-Up-Dairy "Not supplied yet." := (=> (And (On-Sale ?Item ?Tag-Number ?Sit1) (Dairy-Product ?Item) (Cost ?Item ?Price ?Sit1)) (And (Picked-Up ?Item ?Tag-Number ?Sit2))))
+
+
+;;; Pay-For
+
+(Define-Axiom Pay-For "Not supplied yet." := (=> (And (Has-Money ?Agent ?Amount ?Sit1) (Picked-Up ?Item ?Tag-Number)) (And (Paid-For ?Agent ?Item ?Sit2))))
+
+;;; Add-To-Bag
+
+(Define-Axiom Add-To-Bag "Not supplied yet." := (=> (And (Paid-For ?Agent ?Item ?Sit1)) (And (Has ?Agent ?Item ?Sit2))))
+
+
+;;; Pseudo-Var
+
+(Define-Individual Pseudo-Var (Confirmation-Number) "Not supplied yet.")
+
+
+;;; Sit-Var
+
+(Define-Class Sit-Var (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+
+;;; Start
+
+(Define-Individual Start (Sit-Var) "Not supplied yet.")

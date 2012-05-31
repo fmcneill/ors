@@ -1,0 +1,119 @@
+K 25
+svn:wc:ra_dav:version-url
+V 31
+/svn/!svn/ver/117/trunk/ken/ors
+END
+server.pl
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/65/trunk/ken/ors/server.pl
+END
+metaOnt.pl
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/69/trunk/ken/ors/metaOnt.pl
+END
+old-refinement.pl
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/65/trunk/ken/ors/old-refinement.pl
+END
+putInBasketAgentSig.pl
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/65/trunk/ken/ors/putInBasketAgentSig.pl
+END
+centralThy.pl
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/69/trunk/ken/ors/centralThy.pl
+END
+planfinder.pl
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/65/trunk/ken/ors/planfinder.pl
+END
+update.pl
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/svn/!svn/ver/65/trunk/ken/ors/update.pl
+END
+ont.in
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/svn/!svn/ver/69/trunk/ken/ors/ont.in
+END
+centralSig.pl
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/69/trunk/ken/ors/centralSig.pl
+END
+expClient.pl
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/66/trunk/ken/ors/expClient.pl
+END
+diagnosticAlgorithm.pl
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/65/trunk/ken/ors/diagnosticAlgorithm.pl
+END
+refinement.pl
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/svn/!svn/ver/65/trunk/ken/ors/refinement.pl
+END
+ont.out
+K 25
+svn:wc:ra_dav:version-url
+V 38
+/svn/!svn/ver/69/trunk/ken/ors/ont.out
+END
+translation.pl
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/!svn/ver/65/trunk/ken/ors/translation.pl
+END
+planner.pl
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/65/trunk/ken/ors/planner.pl
+END
+metaOnt.in
+K 25
+svn:wc:ra_dav:version-url
+V 41
+/svn/!svn/ver/69/trunk/ken/ors/metaOnt.in
+END
+planDecon.pl
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/svn/!svn/ver/65/trunk/ken/ors/planDecon.pl
+END
+metaRefinement.pl
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/svn/!svn/ver/65/trunk/ken/ors/metaRefinement.pl
+END
+metaOnt.out
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/65/trunk/ken/ors/metaOnt.out
+END

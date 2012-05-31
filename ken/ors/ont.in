@@ -1,0 +1,137 @@
+(In-Package "ONTOLINGUA-USER")
+
+;;; Written by user Fionam from session "learners" owned by group UNIVERSE
+;;; Date: Nov 17, 2004  09:35
+;;; Definitions: 54
+
+
+(Define-Ontology
+     Sem-Web-Lucas
+     (Frame-Ontology)
+   "Not supplied yet."
+   :Io-Package
+   "ONTOLINGUA-USER")
+
+
+(In-Ontology (Quote Shopping))
+
+
+
+;;; Item
+
+(Define-Class Item (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+;;; Group
+
+(Define-Class Group (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+;;; Shopping-Group
+
+(Define-Class Shopping-Group (?X) "Not supplied yet." :Def (And (Group ?X)))
+
+;;; Academic-Group
+
+(Define-Class Academic-Group (?X) "Not supplied yet." :Def (And (Group ?X)))
+
+;;; Agent
+
+(Define-Class Agent (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+;;; Book
+
+(Define-Class Book (?X) "Not supplied yet." :Def (And (Item ?X)))
+
+;;; Buy
+
+(Define-Axiom Buy "Not supplied yet." := (=> (And (In-Basket ?Agent ?Item Pseudo-Var ?Sit1) (Money ?Agent ?Amount ?Sit1) (Cost ?Item ?Price ?Sit1) (< ?Price ?Amount)) (And (Has ?Agent ?Item ?Sit2) (= ?Newamount (- ?Amount ?Price)) (Money ?Agent ?Newamount ?Sit2) (Not (Money ?Agent ?Amount ?Sit2)))))
+
+;;; Has
+
+(Define-Relation Has (?Agent ?Item ?Situation) "Not supplied yet." :Def (And (Agent ?Agent) (Item ?Item) (Sit-Var ?Situation)))
+
+;;; In-Basket
+
+(Define-Function In-Basket (?Agent-0 ?Item ?Confirmation-Number ?Situation) :-> ?Value "Not supplied yet." :Def (And (Agent ?Agent-0) (Item ?Item) (Confirmation-Number ?Value) (Sit-Var ?Situation)))
+
+;;; Choose-Item
+
+(Define-Relation Choose-Item (?Agent ?Item ?Ref ?Situation) "Not supplied yet." :Def (And (Agent ?Agent) (Item ?Item) (Confirmation-Number ?Ref) (Sit-Var ?Situation)))
+
+;;; Interest
+
+(Define-Relation Interest (?Agent ?Group ?Situation) "Not supplied yet." :Def (And (Agent ?Agent) (Group ?Group) (Sit-Var ?Situation)))
+
+;;; Registered-Member
+
+(Define-Relation Registered-Member (?Agent ?Group ?Situation) "Not supplied yet." :Def (And (Agent ?Agent) (Group ?Group) (Sit-Var ?Situation)))
+
+;;; Cost
+
+(Define-Function Cost (?Item ?Situation) :-> ?Value "Not supplied yet." :Def (And (Item ?Item) (Number ?Value) (Sit-Var ?Situation)))
+
+;;; Money
+
+(Define-Function Money (?Agent-0 ?Situation) :-> ?Value "Not supplied yet." :Def (And (Agent ?Agent-0) (Number ?Value) (Sit-Var ?Situation)))
+
+;;; Put-In-Basket
+
+(Define-Axiom Put-In-Basket "Not supplied yet." := (=> (And (Choose-Item ?Agent ?Item ?Ref ?Sit1) (Registered-Member ?Agent ?Group ?Sit1) (Group ?Group)) (And (In-Basket ?Agent ?Item Pseudo-Var ?Sit2))))
+
+;;; Join-Group
+
+(Define-Axiom Join-Group "Not supplied yet." := (=> (And (Interest ?Agent ?Group ?Sit1) (Group ?Group)) (And (Registered-Member ?Agent ?Group ?Sit2))))
+
+;;; Our-Mutual-Friend
+
+(Define-Frame Our-Mutual-Friend  :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Book)) :Axioms ((Cost Our-Mutual-Friend 9 [(Put-In-Basket Shopping-Agent Ai-Group Our-Mutual-Friend)(Start)])))
+
+;;; Book-Shop-Group
+
+(Define-Individual Book-Shop-Group (Shopping-Group) "Not supplied yet.")
+
+;;; Ai-Group
+
+(Define-Individual Ai-Group (Academic-Group) "Not supplied yet.")
+
+;;; 123
+
+(Define-Individual 123 (Confirmation-Number) "Not supplied yet.")
+
+;;; Ai-Group
+
+(Define-Individual MyRef (Confirmation-Number) "Not supplied yet.")
+
+;;; Shopping-Agent
+
+(Define-Frame Shopping-Agent :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent) (Registered-Member Ai-Group [(Put-In-Basket Shopping-Agent Ai-Group Our-Mutual-Friend)(Start)]) (Choose-Item Our-Mutual-Friend 123 [(Put-In-Basket Shopping-Agent Ai-Group Our-Mutual-Friend)(Start)]) (Interest Book-Shop-Group [(Put-In-Basket Shopping-Agent Ai-Group Our-Mutual-Friend)(Start)])) :Axioms ((Money Shopping-Agent 100 [(Put-In-Basket Shopping-Agent Ai-Group Our-Mutual-Friend)(Start)])))
+
+;;; Currency
+
+(Define-Class Currency (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+;;; Dollars
+
+(Define-Individual Dollars (Currency) "Not supplied yet.")
+
+;;; Sterling
+
+(Define-Function Sterling (?Agent-0 ?Situation) :-> ?Value "Not supplied yet." :Def (And (Agent ?Agent-0) (Number ?Value) (Sit-Var ?Situation)))
+
+;;; Confirmation-Number
+
+(Define-Class Confirmation-Number (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+;;; Pseudo-Var
+
+(Define-Individual Pseudo-Var (Confirmation-Number) "Not supplied yet.")
+
+;;; Sit-Var
+
+(Define-Class Sit-Var (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+;;; Start
+
+
+(Define-Individual Start (Sit-Var) "Not supplied yet.")
+
+

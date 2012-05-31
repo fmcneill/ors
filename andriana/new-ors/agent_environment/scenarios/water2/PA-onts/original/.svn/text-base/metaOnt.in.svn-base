@@ -1,0 +1,22 @@
+;;; Action
+(Define-Class Action (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+;;; Inform
+(Define-Class Inform (?X) "Not supplied yet." :Def (And (Predicate ?X))) 
+
+;;; Agent-Needed
+(Define-Function Agent-Needed (?Agent-0) :-> ?Value "Not supplied yet." :Def (And (Agent ?Agent-0) (Action ?Value))) 
+
+;;; plantOne
+(Define-Frame Plant-One :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent) (At Alpha)) :Axioms ((Agent-Needed Plant-One Send-Water)))
+
+;;; plantZero
+(Define-Frame Plant-Zero :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent) (Treats Alpha Beta) :Axioms ((Agent-Needed Plant-Zero Send-Water))) 
+
+
+;;; Send-Water
+
+(Define-Individual Send-Water (Action) "Not supplied yet.")
+
+
+

@@ -1,0 +1,192 @@
+(In-Package "ONTOLINGUA-USER")
+
+;;; Written by user Fionam from session "Session name not supplied [Tuesday, 25 January 2005, 03:10:57]" owned by group JUST-ME
+;;; Date: Jan 25, 2005  10:37
+;;; Definitions: 34
+
+
+(Define-Ontology
+     Sumo
+     (Frame-Ontology)
+   "This is an attempt to recreate a part of the SUMO ontology in KIF to test on the system."
+   :Io-Package
+   "ONTOLINGUA-USER")
+
+
+(In-Ontology (Quote Sumo))
+
+
+;;; Start
+
+(Define-Individual Start (Sit-Var) "Not supplied yet.")
+
+
+;;; Do-B-Agent
+
+(Define-Individual Do-B-Agent (Agent) "Not supplied yet.") 
+
+
+;;; Agent-B
+
+(Define-Frame Agent-B :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent)) :Axioms ((Destination Agent-B Communication-A [Start]))) 
+
+
+;;; Cognitive-Agent
+
+(Define-Class Cognitive-Agent (?X) "Not supplied yet." :Def (And (Agent ?X))) 
+
+
+;;; Do-A
+
+(Define-Axiom Do-A "Not supplied yet." := (=> (And (Result-Rel ?Action ?Entity ?Sit1) (Performs ?Agent ?Action ?Sit1) (Patient ?Comm ?Physical ?Sit1)) (And (Represents ?Physical ?Entity ?Sit2))))
+
+
+;;; Domains
+
+(Define-Class Domains (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Entity
+
+(Define-Class Entity (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Tell
+
+(Define-Axiom Tell "Not supplied yet." := (=> (And (Refers ?Physical ?Entity ?Sit1) (Patient ?Comm ?Physical ?Sit1) (Destination ?Agent ?Comm ?Sit1)) (And (Knows ?Agent ?Comm ?Sit2))))
+
+
+;;; Object
+
+(Define-Class Object (?X) "Not supplied yet." :Def (And (Entity ?X))) 
+
+
+;;; Action
+
+(Define-Class Action (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Entity-A
+
+(Define-Individual Entity-A (Entity) "Not supplied yet.") 
+
+
+;;; Performs
+
+(Define-Relation Performs (?Agent ?Action ?Situation) "Not supplied yet." :Def (And (Agent ?Agent) (Action ?Action) (Sit-Var ?Situation))) 
+
+
+;;; Sit-Var
+
+(Define-Class Sit-Var (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+
+;;; Physical
+
+(Define-Class Physical (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Do-B
+
+(Define-Axiom Do-B "Not supplied yet." := (=> (And (Result-Rel ?Action ?Entity ?Sit1) (Performs ?Agent ?Action ?Sit1) (Domain-Rel ?Action ?Domain ?Sit1)) (And (Refers ?Physical ?Entity ?Sit2))))
+
+
+;;; Physical-A
+
+(Define-Individual Physical-A (Physical) "Not supplied yet.") 
+
+
+;;; Action-A
+
+(Define-Frame Action-A :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Action) (Result-Rel Entity-A [Start])) :Axioms ((Domain-Rel Action-A Domain-A [Start])))
+
+
+;;; Communication-A
+
+(Define-Frame Communication-A :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Communication)) :Axioms ((Patient Communication-A Physical-A [Start]))) 
+
+
+;;; Destination
+
+(Define-Relation Destination (?Agent ?Communication ?Situation) "Not supplied yet." :Def (And (Agent ?Agent) (Communication ?Communication) (Sit-Var ?Situation))) 
+
+
+;;; Agent-A
+
+(Define-Frame Agent-A :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent)) :Axioms ((Performs Agent-A Action-A [Start]))) 
+
+
+;;; Do-A-Agent
+
+(Define-Individual Do-A-Agent (Agent) "Not supplied yet.") 
+
+
+;;; Transfer
+
+(Define-Class Transfer (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Refers
+
+(Define-Relation Refers (?Physical ?Entity ?Situation) "Not supplied yet." :Def (And (Physical ?Physical) (Entity ?Entity) (Sit-Var ?Situation))) 
+
+
+;;; Result-Rel
+
+(Define-Relation Result-Rel (?Action ?Entity ?Situation) "Not supplied yet." :Def (And (Action ?Action) (Entity ?Entity) (Sit-Var ?Situation))) 
+
+
+;;; Object-A
+
+(Define-Individual Object-A (Object) "Not supplied yet.") 
+
+
+;;; Agent
+
+(Define-Class Agent (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Domain-Rel
+
+(Define-Relation Domain-Rel (?Action ?Domains ?Situation) "Not supplied yet." :Def (And (Action ?Action) (Domains ?Domains) (Sit-Var ?Situation))) 
+
+
+;;; Tell-Agent
+
+(Define-Individual Tell-Agent (Agent) "Not supplied yet.") 
+
+
+;;; Result-A
+
+(Define-Individual Result-A (Result) "Not supplied yet.") 
+
+
+;;; Domain-A
+
+(Define-Individual Domain-A (Domains) "Not supplied yet.") 
+
+
+;;; Result
+
+(Define-Class Result (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Knows
+
+(Define-Relation Knows (?Agent ?Communication ?Situation) "Not supplied yet." :Def (And (Agent ?Agent) (Communication ?Communication) (Sit-Var ?Situation))) 
+
+
+;;; Patient
+
+(Define-Relation Patient (?Communication ?Physical ?Situation) "Not supplied yet." :Def (And (Communication ?Communication) (Physical ?Physical) (Sit-Var ?Situation))) 
+
+
+;;; Represents
+
+(Define-Relation Represents (?Physical ?Entity ?Situation) "Not supplied yet." :Def (And (Physical ?Physical) (Entity ?Entity) (Sit-Var ?Situation))) 
+
+
+;;; Communication
+
+(Define-Class Communication (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+

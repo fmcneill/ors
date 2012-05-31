@@ -1,0 +1,204 @@
+(Define-Ontology
+     Sem-Web-Lucas
+     (Frame-Ontology)
+   "Not supplied yet."
+   :Io-Package
+   "ONTOLINGUA-USER")
+
+
+(In-Ontology (Quote Post))
+
+
+;;; CLASS HIERARCHY
+
+
+;;; Agent
+
+(Define-Class Agent (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+
+;;; Place
+
+(Define-Class Place (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+
+;;; Country
+
+(Define-Class Country (?X) "Not supplied yet." :Def (And (Place ?X)))
+
+
+;;; Region
+
+(Define-Class Region (?X) "Not supplied yet." :Def (And (Place ?X)))
+
+
+;;; Town
+
+(Define-Class Town (?X) "Not supplied yet." :Def (And (Place ?X)))
+
+
+;;; Office
+
+(Define-Class Office (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+
+;;; Person
+
+(Define-Class Person (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+
+;;; Letter
+
+(Define-Class Letter (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+
+;;; Location-Address
+
+(Define-Class Location-Address (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+
+;;; Ireland-Address
+
+(Define-Class Ireland-Address (?X) "Not supplied yet." :Def (And (Location-Address ?X)))
+
+
+;;; United-Kingdom-Address
+
+(Define-Class United-Kingdom-Address (?X) "Not supplied yet." :Def (And (Location-Address ?X)))
+
+
+;;; Scotland-Address
+
+(Define-Class Scotland-Address (?X) "Not supplied yet." :Def (And (Ireland-Address ?X)))
+
+
+
+
+;;; INDIVIDUALS AND FRAMES
+
+
+;;; This-Letter
+
+(Define-Individual This-Letter (Letter) "Not supplied yet.")
+
+
+;;; This-Address
+
+(Define-Individual This-Address (Scotland-Address) "Not supplied yet.")
+
+
+;;; Ireland
+
+(Define-Individual Ireland (Country) "Not supplied yet.")
+
+
+;;; United-Kingdom
+
+(Define-Individual United-Kingdom (Country) "Not supplied yet.")
+
+
+;;; Fourman
+
+(Define-Frame Fourman :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Person)) :Axioms ((My-Office Fourman Informatics-Forum [(Start)])))
+
+
+;;; Informatics-Forum
+
+(Define-Frame Informatic-Forum :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Office)) :Axioms ((Located Informatics-Forum Edinburgh [(Start)]))) 
+
+
+;;; Edinburgh
+
+(Define-Frame Edinburgh :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Town)) :Axioms ((Located Edinburgh Scotland [(Start)]))) 
+
+
+;;; Scotland
+
+(Define-Frame Scotland :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Region)) :Axioms ((Located Scotland Ireland [(Start)]) (Address-Located Scotland Scotland-Address [(Start)]))) 
+
+
+;;; FUNCTIONS AND RELATIONS
+
+;;; Money
+
+;;(Define-Function Money (?Agent-0 ?Situation) :-> ?Value "Not supplied yet." :Def (And (Agent ?Agent-0) (Number ?Value) (Sit-Var ?Situation))) 
+
+
+;;; My-Office
+
+(Define-Relation My-Office (?Person ?Office ?Situation) "Not supplied yet." :Def (And (Person ?Person) (Office ?Office) (Sit-Var ?Situation)))
+
+
+;;; Located
+
+(Define-Relation Located (?Place1 ?Place2 ?Situation) "Not supplied yet." :Def (And (Place ?Place1) (Place ?Place2) (Sit-Var ?Situation)))
+
+
+;;; Addressed
+
+; (Define-Relation Addressed (?Person ?Office ?Town ?Region ?Country ?Letter ?Situation) "Not supplied yet." :Def (And (Person ?Person) (Office ?Office) (Place ?Town) (Place ?Region) (Place ?Country) (Letter ?Letter) (Sit-Var ?Situation)))
+
+(Define-Relation Addressed (?Person ?Region ?Location-Address ?Letter ?Situation) "Not supplied yet." :Def (And (Person ?Person) (Place ?Region) (Location-Address ?Location-Address) (Letter ?Letter) (Sit-Var ?Situation)))
+
+
+;;; Sent
+
+; (Define-Relation Sent (?Person ?Letter ?Office ?Town ?Region ?Country ?Situation) "Not supplied yet." :Def (And (Person ?Person) (Letter ?Letter) (Office ?Office) (Town ?Town) (Region ?Region) (Country ?Country) (Sit-Var ?Situation)))
+
+(Define-Relation Sent (?Person ?Letter ?Situation) "Not supplied yet." :Def (And (Person ?Person) (Letter ?Letter) (Sit-Var ?Situation)))
+
+;;; Address-Located
+
+(Define-Relation Address-Located (?Place ?Location-Address ?Situation) "Not supplied yet." :Def (And (Place ?Place) (Location-Address ?Location-Address) (Sit-Var ?Situation)))
+
+
+
+;;; AXIOMS
+
+
+;;; Address
+
+; (Define-Axiom Address "Not supplied yet." := (=> (And (Person ?Person) (My-Office ?Person ?Office ?Sit1) (Located ?Office ?Town ?Sit1) (Located ?Town ?Region ?Sit1) (Located ?Region ?Country ?Sit1) (Country ?Country) (Letter ?Letter)) (And (Addressed ?Person ?Region ?Country ?Letter ?Sit2))))
+
+; it seems like the precondition 'Address-Located' should be there because you should check that the address is being sent to the right region.  But this doesn't work because we need to find out first that the instantiation 'this-address' is in fact, e.g., scotland-address and then that scotland-address is in scotland - but we can't put in a constraint (?country-address ?location-address) - we need to know what ?country-address is first.  But we only know in advance what 'this-address' is, and then we work out what 'location-address' is ...
+
+; (Define-Axiom Address "Not supplied yet." := (=> (And (Person ?Person) (Address-Located ?Region ?Location-Address ?Sit1) (Region ?Region) (Letter ?Letter)) (And (Addressed ?Person ?Region ?Location-Address ?Letter ?Sit2))))
+
+(Define-Axiom Address "Not supplied yet." := (=> (And (Person ?Person) (Region ?Region) (Letter ?Letter)) (And (Addressed ?Person ?Region ?Location-Address ?Letter ?Sit2))))
+
+
+;;; Post-Ireland-Letter
+
+(Define-Axiom Post-Ireland-Letter "Not supplied yet." := (=> (And (Ireland-Address ?Location-Address ?Sit1) (Addressed ?Person ?Region ?Location-Address ?Letter ?Sit1)) (And (Sent ?Person ?Letter ?Sit2))))
+
+
+
+;;; Post-United-Kingdom-Letter
+
+(Define-Axiom Post-United-Kingdom-Letter "Not supplied yet." := (=> (And (Addressed ?Person ?Region ?Location-Address ?Letter ?Sit1) (United-Kingdom-Address ?Location-Address ?Sit1)) (And (Sent ?Person ?Letter ?Sit2))))
+
+
+
+
+
+
+;;;  GENERAL STUFF
+
+;;; Pseudo-Var
+
+(Define-Individual Pseudo-Var (Confirmation-Number) "Not supplied yet.")
+
+
+;;; Confirmation-Number
+
+(Define-Class Confirmation-Number (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+
+;;; Sit-Var
+
+(Define-Class Sit-Var (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+
+;;; Start
+
+(Define-Individual Start (Sit-Var) "Not supplied yet.")

@@ -1,0 +1,10 @@
+:- use_module(library('linda/server')),
+   use_module(library('system')),
+   pid(PId),
+   linda((Host:Port)-(tell('alan.addr'),
+                      write('\''),
+                      write(Host),
+                      write('\':'),
+                      write(Port-PId),
+                      write('.'),
+                      told)).

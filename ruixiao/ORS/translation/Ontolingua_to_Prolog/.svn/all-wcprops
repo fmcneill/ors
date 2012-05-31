@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/113/trunk/new-ors/ORS/translation/Ontolingua_to_Prolog
+END
+translateMetaOnt.pl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/112/trunk/new-ors/ORS/translation/Ontolingua_to_Prolog/translateMetaOnt.pl
+END
+translation.pl
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/113/trunk/new-ors/ORS/translation/Ontolingua_to_Prolog/translation.pl
+END
+translateGoal.pl
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/svn/!svn/ver/19/trunk/new-ors/ORS/translation/Ontolingua_to_Prolog/translateGoal.pl
+END
+translateToProlog.pl
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/svn/!svn/ver/86/trunk/new-ors/ORS/translation/Ontolingua_to_Prolog/translateToProlog.pl
+END
+translateToPDDL.pl
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/svn/!svn/ver/19/trunk/new-ors/ORS/translation/Ontolingua_to_Prolog/translateToPDDL.pl
+END

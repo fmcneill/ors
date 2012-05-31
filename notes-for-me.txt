@@ -1,0 +1,67 @@
+test
+
+12/05/10
+
+The predicate 'checkPreconds' in the agent 'post/addressLetterAgent'
+has been updated and is more correct than the version that other
+agents have.  This also entails small changes in the Sig file (removal
+of uninstantiated arguments from the list).  This will be the version
+that is used for future agents and all existing agents should be
+updated with this version, once it has been used long enough to debug
+it.
+
+
+*********************
+
+The whole process of diagnosis is too rubbish.  There is no clear
+decision about how questions are asked, when to rely on one's own
+knowledge, etc.  This needs to be rethought and rewritten ... if
+there's time ...
+
+
+
+***********************
+
+There is a problem with class mismatch diagnoses that needs to be
+corrected.
+
+Problem preconds are found by checking PA's beliefs against SPA's:
+e.g., PA believes class(thisAddress,irelandAddress) but SPA does not.
+
+There are three problems:
+- PA should believe anyway that class(thisAddress,irelandAddress) is
+true because it believes both class(thisAddress,scotlandAddress) and
+class(scotlandAddress,irelandAddress) but this is not appearing in the
+centralSig.
+
+- SPA's beliefs are a bit screwed up, need to sort this out somehow.
+
+- If PA discovers its believe class(thisAddress,irelandAddress) is
+wrong, it does not try to find out why it believes that to be true
+(i.e., that scotlandAddress is a subclass of irelandAddress).  It
+needs to sort through the class hierarchy to find all the potential
+problems and then question the agent as to which is correct.  This
+needs to be built in.
+
+
+These problems can be sorted out and are theoretically too hard
+(though practically maybe hard).  But this is only worth redoing
+properly if ORS is going to be directly used.
+
+
+*************************
+
+The refinement process assumes that all args are uninstantiated and
+therefore can be identified by their initial ?.  If the args are
+instantiated, refinement will fail.
+
+**********************
+
+Argument switch (and maybe others) assumes that all variables are
+instantiated and fails if any are uninstantaited.  Need to fix this.
+
+********************
+
+domain repair is very hard ... how to tell this apart from adding a
+class restriction?  examples for this are quite forced and need to be
+based on an instantiated question.

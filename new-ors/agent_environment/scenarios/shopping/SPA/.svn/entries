@@ -1,0 +1,43 @@
+10
+
+dir
+124
+https://ontologyrefinement.googlecode.com/svn/trunk/new-ors/agent_environment/scenarios/shopping/SPA
+https://ontologyrefinement.googlecode.com/svn
+
+
+
+2011-05-16T14:32:06.292862Z
+106
+fiona.mcneill
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+f7dfa286-97d5-cad7-4443-366c7309edc4
+
+joinGroupAgentTwo
+dir
+
+putItemInBasketAgent
+dir
+
+putInBasketAgent
+dir
+
+joinGroupAgentOne
+dir
+
+buyAgent
+dir
+

@@ -1,0 +1,42 @@
+;;; Agent 
+(Define-Class Agent (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+;;; Water
+(Define-Class Water (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+;;; Contaminant
+(Define-Class Contaminant (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+;;; Treats
+(Define-Relation Treats (?Agent ?Contaminant ?Situation) "Not supplied yet." :Def (And (Agent ?Agent) (Contaminant ?Contaminant) (Sit-Var ?Situation)))
+
+;;; At
+(Define-Relation At (?Agent ?Contaminant ?Situation) "Not supplied yet." :Def (And (Agent ?Agent) (Contaminant ?Contaminant) (Sit-Var ?Situation)))
+
+;;; Plant-Zero
+(Define-Frame Plant-Zero :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent)) :Axioms ((Treats Plant-Zero Alpha [Start])))
+
+;;; Plant-One
+(Define-Frame Plant-One :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent)) :Axioms ((At Plant-One Alpha [Start])))
+
+
+;;; Send Contaminant1
+(Define-Axiom Send-Water "Not supplied yet." := (=> (And (At ?Agent1 ?Contaminant ?Sit1) (Treats ?Agent2 ?Contaminant ?Sit1)) (And (At ?Agent2 Contaminant ?Sit2) (Not (At ?Agent1 Contaminant ?Sit2)))))
+
+;;; Send Contaminant2
+(Define-Axiom Send-Water "Not supplied yet." := (=> (And (At ?Agent1 ?Contaminant ?Sit1) (Treats ?Agent2 ?Contaminant ?Sit1)) (And (At ?Agent2 Contaminant ?Sit2) (Not (At ?Agent1 Contaminant ?Sit2)))))
+
+
+;;; Alpha
+(Define-Individual Alpha (Contaminant) "Not supplied yet.")
+
+;;; Beta
+(Define-Individual Beta (Contaminant) "Not supplied yet.")
+
+;;; Sit-Var
+
+(Define-Class Sit-Var (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+;;; Start
+
+(Define-Individual Start (Sit-Var) "Not supplied yet.")

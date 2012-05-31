@@ -1,0 +1,35 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/65/trunk/ken/ors/ontologies/lucas-conf
+END
+ont.in
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/!svn/ver/65/trunk/ken/ors/ontologies/lucas-conf/ont.in
+END
+backupOnt.in
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/65/trunk/ken/ors/ontologies/lucas-conf/backupOnt.in
+END
+metaOnt.in
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/65/trunk/ken/ors/ontologies/lucas-conf/metaOnt.in
+END
+goodont.in
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/65/trunk/ken/ors/ontologies/lucas-conf/goodont.in
+END
+metaOnt-demo.in
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/65/trunk/ken/ors/ontologies/lucas-conf/metaOnt-demo.in
+END

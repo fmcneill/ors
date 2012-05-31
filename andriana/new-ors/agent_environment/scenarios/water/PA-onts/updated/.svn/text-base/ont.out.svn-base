@@ -1,0 +1,52 @@
+;;; Agent 
+(Define-Class Agent (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+;;; Contaminant
+(Define-Class Contaminant (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+;;; Treats
+(Define-Relation Treats (?Agent ?Contaminant) "Not supplied yet." :Def (And (Agent ?Agent) (Contaminant ?Contaminant)))
+
+;;; At
+(Define-Relation At (?Agent ?Contaminant) "Not supplied yet." :Def (And (Agent ?Agent) (Contaminant ?Contaminant)))
+
+;;; Used
+(Define-Function Used (?Agent ?Situation) :->  ?Value "Not supplied yet." :Def (And (Agent ?Agent) (Number ?Value) (Sit-Var ?Situation)))
+
+;;; Max
+(Define-Function Max (?Agent ?Situation) :->  ?Value "Not supplied yet." :Def (And (Agent ?Agent) (Number ?Value) (Sit-Var ?Situation)))
+
+;;; Plant-Zero
+(Define-Frame Plant-Zero :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent) (At Alpha [(Send-Contaminant Plant-Two Plant-Zero Alpha)(Start)])) :Axioms ((Treats Plant-Zero beta)))
+
+;;; Plant-One
+(Define-Frame Plant-One :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent)) :Axioms ((Used Plant-One 200) (Max Plant-One 400)))
+
+;;; Plant-Two
+(Define-Frame Plant-Two :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent)) :Axioms ((At Plant-Two alpha) (At Plant-Two beta)))
+
+;;; Send Contaminant
+(Define-Axiom Send-Contaminant "Not supplied yet." := (=> (And (At ?Agent1 ?Contaminant)) (And (At ?Agent2 ?Contaminant))))
+
+;;; Send Volume
+(Define-Axiom Send-Volume "Not supplied yet." := (=> (And (Agent ?Agent1) (Agent ?Agent2) (Number ?Sent) (Used ?Agent1 ?Used1 ?Sit1) (Max ?Agent1 ?Max1 ?Sit1) (Used ?Agent2 ?Used2 ?Sit1) (> ?Used1 ?Sent)) (And (= ?Newused1 (- ?Used1 ?Sent)) (Used ?Agent1 ?Newused1 ?Sit2) (= ?Newused2 (+ ?Used2 ?Sent)) (Used ?Agent2 ?Newused2 ?Sit2))))
+
+;;; Alpha
+(Define-Individual Alpha (Contaminant) "Not supplied yet.")
+
+;;; Beta
+(Define-Individual Beta (Contaminant) "Not supplied yet.")
+
+;;; Sit-Var
+(Define-Class Sit-Var (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+;;; Start
+(Define-Individual Start (Sit-Var) "Not supplied yet.")
+
+
+
+
+
+
+
+

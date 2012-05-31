@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 42
+/svn/!svn/ver/65/trunk/ken/ors/agents/sumo
+END
+server.addr
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/65/trunk/ken/ors/agents/sumo/server.addr
+END
+doAAgentSig.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/65/trunk/ken/ors/agents/sumo/doAAgentSig.pl
+END
+server.pl
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/svn/!svn/ver/65/trunk/ken/ors/agents/sumo/server.pl
+END
+doBAgentSig.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/65/trunk/ken/ors/agents/sumo/doBAgentSig.pl
+END
+doAAgentThy.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/65/trunk/ken/ors/agents/sumo/doAAgentThy.pl
+END
+doBAgentThy.pl
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/65/trunk/ken/ors/agents/sumo/doBAgentThy.pl
+END
+tellAgent.pl
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/65/trunk/ken/ors/agents/sumo/tellAgent.pl
+END
+doAgent.pl
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/svn/!svn/ver/65/trunk/ken/ors/agents/sumo/doAgent.pl
+END
+doAAgent.pl
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/65/trunk/ken/ors/agents/sumo/doAAgent.pl
+END
+tellAgentSig.pl
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/65/trunk/ken/ors/agents/sumo/tellAgentSig.pl
+END
+doBAgent.pl
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/svn/!svn/ver/65/trunk/ken/ors/agents/sumo/doBAgent.pl
+END
+tellAgentThy.pl
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/65/trunk/ken/ors/agents/sumo/tellAgentThy.pl
+END
