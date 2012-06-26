@@ -84,3 +84,7 @@ savedExps(_862801,joinGroup(shoppingAgent,bookShopGroup),none).
 savedExps(_1261578,putInBasket(shoppingAgent,bookShopGroup,ourMutualFriend),none).
 
 savedExps(_1709713,buy(shoppingAgent,ourMutualFriend),none).
+
+savedExps(_17027,expressingApproval(jerryTheBot),none).
+
+savedExps(_37308,appointing(jerryTheBot),none).

@@ -32,7 +32,7 @@ subclass(creek,freshWaterArea).
 subclass(metricTon,massMeasure).
 subclass(expressingFarewell,expressing).
 subclass(thanking,expressingApproval).
-subclass(newTestament,book).
+subclass(doorway,stationaryArtifact).
 subclass(bloodCell,cell).
 subclass(oven,heatingDevice).
 subclass(college,postSecondarySchool).
@@ -41,6 +41,7 @@ subclass(missile,selfPoweredDevice).
 subclass(poultry,livestock).
 subclass(nostril,animalAnatomicalStructure).
 subclass(song,musicalComposition).
+subclass(turbine,engine).
 subclass(frightening,psychologicalProcess).
 subclass(tape,attachingDevice).
 subclass(governmentBuilding,building).
@@ -311,7 +312,6 @@ subclass(constrictorSnake,snake).
 subclass(coffin,container).
 subclass(dish,holder).
 subclass(boarding,translocation).
-subclass(doorway,stationaryArtifact).
 subclass(chin,bodyPart).
 subclass(opticalDevice,device).
 subclass(securityUnit,organization).
@@ -363,7 +363,6 @@ subclass(bloodTypeA,blood).
 subclass(rocket,projectile).
 subclass(truck,selfPoweredRoadVehicle).
 subclass(contraceptiveDevice,device).
-subclass(mediaOrganization,organization).
 subclass(cafeteria,restaurant).
 subclass(medicine,biologicallyActiveSubstance).
 subclass(dutyTax,tax).
@@ -378,7 +377,7 @@ subclass(plantBranch,plantAnatomicalStructure).
 subclass(sharing,changeOfPossession).
 subclass(referenceBook,book).
 subclass(transportationCompany,commercialAgent).
-subclass(reflectingLight,radiatingLight).
+subclass(bloodTypeB,blood).
 subclass(postMeridiem,timeInterval).
 subclass(smoking,recreationOrExercise).
 subclass(missionOrganization,religiousOrganization).
@@ -473,12 +472,12 @@ subclass(maizeGrain,cerealGrain).
 subclass(horn,bone).
 subclass(standingUp,bodyMotion).
 subclass(careOrganization,organization).
-subclass(businessCompetition,contest).
+subclass(anaconda,constrictorSnake).
 subclass(brass,metallicAlloy).
 subclass(dayTime,timeInterval).
 subclass(lamb,sheep).
 subclass(radish,plantRoot).
-subclass(filmDirector,filmMakingProfession).
+subclass(consonant,alphabeticCharacter).
 subclass(ladder,artifact).
 subclass(projectileLauncher,weapon).
 subclass(gameShot,maneuver).
@@ -980,7 +979,7 @@ subclass(antenna,communicationDevice).
 subclass(incomeTax,tax).
 subclass(telegraph,communicationDevice).
 subclass(sittingDown,bodyMotion).
-subclass(postSecondarySchool,school).
+subclass(laboratory,stationaryArtifact).
 subclass(motorizedRailwayCar,rollingStock).
 subclass(divorcing,declaring).
 subclass(warehouse,commercialBuilding).
@@ -1088,7 +1087,7 @@ subclass(punishing,organizationalProcess).
 subclass(dripping,liquidMotion).
 subclass(testament,certificate).
 subclass(shelf,artifact).
-subclass(turbine,engine).
+subclass(mediaOrganization,organization).
 subclass(bequeathing,unilateralGiving).
 subclass(stomach,organ).
 subclass(corresponding,linguisticCommunication).
@@ -1184,7 +1183,7 @@ subclass(brood,groupOfAnimals).
 subclass(fluidContainer,container).
 subclass(judge,attorney).
 subclass(viralDisease,infectiousDisease).
-subclass(laboratory,stationaryArtifact).
+subclass(postSecondarySchool,school).
 subclass(sleeve,clothing).
 subclass(roof,stationaryArtifact).
 subclass(becomingDrunk,psychologicalProcess).
@@ -1226,7 +1225,7 @@ subclass(page,informationMeasure).
 subclass(bloodVessel,animalAnatomicalStructure).
 subclass(aerator,device).
 subclass(maid,servicePosition).
-subclass(anaconda,constrictorSnake).
+subclass(businessCompetition,contest).
 subclass(baptizing,joiningAnOrganization).
 subclass(nervousSystem,organ).
 subclass(shoulder,bodyPart).
@@ -1249,7 +1248,7 @@ subclass(spacecraft,vehicle).
 subclass(horse,livestock).
 subclass(commercialShipping,shipping).
 subclass(spaceRegion,region).
-subclass(consonant,alphabeticCharacter).
+subclass(filmDirector,filmMakingProfession).
 subclass(sandwich,preparedFood).
 subclass(theaterProfession,entertainmentProfession).
 subclass(opera,dramaticPlay).
@@ -1260,8 +1259,9 @@ subclass(brandy,distilledAlcoholicBeverage).
 subclass(proprietorship,commercialAgent).
 subclass(ceasingOperations,organizationalProcess).
 subclass(militaryUnit,militaryOrganization).
+subclass(newTestament,book).
 subclass(riceGrain,cerealGrain).
-subclass(explosiveMine,explosiveDevice).
+subclass(loadingWeapon,inserting).
 subclass(axle,device).
 subclass(soldering,attaching).
 subclass(pituitaryGland,gland).
@@ -1329,7 +1329,7 @@ subclass(pocket,fabric).
 subclass(mineOrWell,stationaryArtifact).
 subclass(periodicalPublisher,publisher).
 subclass(broadcasting,radioEmission).
-subclass(bloodTypeB,blood).
+subclass(reflectingLight,radiatingLight).
 subclass(hijacking,robbing).
 subclass(achievingControl,guiding).
 subclass(trembling,tremor).
@@ -1493,7 +1493,7 @@ subclass(antInsect,insect).
 subclass(mule,domesticAnimal).
 subclass(factory,building).
 subclass(fox,canine).
-subclass(loadingWeapon,inserting).
+subclass(explosiveMine,explosiveDevice).
 subclass(stateGovernment,government).
 subclass(composingMusic,contentDevelopment).
 subclass(entertainmentProfession,skilledOccupation).

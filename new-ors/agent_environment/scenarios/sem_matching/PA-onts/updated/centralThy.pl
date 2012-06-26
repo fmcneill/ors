@@ -9,7 +9,7 @@ class(metricTon,unitOfMeasure).
 class(yourEmploymentCertificate,certificate).
 class(dentist,profession).
 class(squareYard,unitOfMeasure).
-class(unitedStatesDepartmentOfInterior,governmentOrganization).
+class(collegeJunior,collegeStudentPosition).
 class(maid,unskilledOccupation).
 class(fieldOfLaw,fieldOfStudy).
 class(unionStatesOfAmerica,geopoliticalArea).
@@ -68,7 +68,7 @@ class(theology,fieldOfStudy).
 class(florida,americanState).
 class(russianLanguage,spokenHumanLanguage).
 class(engineering,science).
-class(collegeJunior,collegeStudentPosition).
+class(unitedStatesDepartmentOfInterior,governmentOrganization).
 class(medicalDoctor,profession).
 class(cancer,diseaseOrSyndrome).
 class(attorneyGeneral,governmentOfficer).
@@ -132,7 +132,7 @@ class(anthropology,socialScience).
 
 fact(meatOfAnimal(beef,cow)).
 fact(result(paintingJerrysCupProcess,cupStillLifeByJerry)).
-fact(initialPart(animalAnatomicalStructure,animal)).
+fact(subField(medicalScience,biology)).
 fact(agent(paintingJerrysCupProcess,jerryTheBot)).
 fact(subField(electronics,engineering)).
 fact(involvedInEvent(mugPaintingContest2010,cupStillLifeByJerry)).
@@ -141,9 +141,9 @@ fact(property(jerryTheBot,won)).
 fact(familyName(hal9000,jerryTheBot)).
 fact(initialPart(digitAppendage,limb)).
 fact(subField(physiology,biology)).
-fact(subField(medicalScience,biology)).
 fact(meatOfAnimal(fishMeat,fish)).
 fact(serviceProvider(expressingApproval,tomRecruiterAgent)).
+fact(initialPart(animalAnatomicalStructure,animal)).
 fact(meatOfAnimal(pork,pig)).
 fact(serviceProvider(appointing,tomRecruiterAgent)).
 fact(contestParticipant(mugPaintingContest2010,jerryTheBot)).
