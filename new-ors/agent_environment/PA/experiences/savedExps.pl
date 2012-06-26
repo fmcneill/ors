@@ -66,3 +66,21 @@ savedExps(_2594917,sendWater(plantOne,plantZero,alpha,beta),none).
 savedExps(_3715859,sendWater(plantOne,plantZero,alpha,beta),none).
 
 savedExps(_3330384,sendWater(plantOne,plantZero,alpha,beta),none).
+
+savedExps(_549877,putInBasket(shoppingAgent,aiGroup,ourMutualFriend),none).
+
+savedExps(_390464,putInBasket(shoppingAgent,aiGroup,ourMutualFriend),none).
+
+savedExps(_862801,joinGroup(shoppingAgent,bookShopGroup),none).
+
+savedExps(_1261578,putInBasket(shoppingAgent,bookShopGroup,ourMutualFriend),none).
+
+savedExps(_1709713,buy(shoppingAgent,ourMutualFriend),none).
+
+savedExps(_390464,putInBasket(shoppingAgent,aiGroup,ourMutualFriend),none).
+
+savedExps(_862801,joinGroup(shoppingAgent,bookShopGroup),none).
+
+savedExps(_1261578,putInBasket(shoppingAgent,bookShopGroup,ourMutualFriend),none).
+
+savedExps(_1709713,buy(shoppingAgent,ourMutualFriend),none).

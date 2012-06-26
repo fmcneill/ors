@@ -1,0 +1,178 @@
+
+(In-Package "ONTOLINGUA-USER")
+
+;;; Written by user Fionam from session "Session name not supplied [Friday, 19 November 2004, 05:04:06]" owned by group JUST-ME
+;;; Date: Nov 19, 2004  05:31
+;;; Definitions: 38
+
+
+(Define-Ontology
+     New-Meta
+     (Frame-Ontology)
+   "Not supplied yet."
+   :Io-Package
+   "ONTOLINGUA-USER")
+
+
+(In-Ontology (Quote New-Meta))
+
+
+
+;;; Join-Group-Agent-One
+
+*(Define-Frame Join-Group-Agent-One :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent)) :Axioms ((Agent-Needed Join-Group-Agent-One Join-Group)))
+
+
+;;; Join-Group-Agent-Two
+
+(Define-Frame Join-Group-Agent-Two :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent)) :Axioms ((Agent-Needed Join-Group-Agent-Two Join-Group))) 
+
+
+;;; Put-In-Basket-Agent
+
+(Define-Frame Put-In-Basket-Agent :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent)) :Axioms ((Agent-Needed Put-In-Basket-Agent Put-In-Basket))) 
+
+
+;;; added Protect in Axioms
+
+;;; Put-Item-In-Basket-Agent
+
+(Define-Frame Put-Item-In-Basket-Agent :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent)) :Axioms ((Agent-Needed Put-Item-In-Basket-Agent Put-Item-In-Basket))) 
+
+
+;;; Buy-Agent
+
+*(Define-Frame Buy-Agent :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent)) :Axioms ((Protect-Function Money Function-All High-Protection) (Agent-Needed Buy-Agent Buy))) 
+
+(Define-Frame Buy-Agent :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent)) :Axioms ((Agent-Needed Buy-Agent Buy))) 
+
+
+;;; Choose-Item
+
+(Define-Class Choose-Item (?X) "Not supplied yet." :Def (And (Predicate ?X))) 
+
+
+;;; Choose-Thing
+
+(Define-Class Choose-Thing (?X) "Not supplied yet." :Def (And (Choose-Item ?X))) 
+
+
+;;; Registered-Member
+
+(Define-Individual Registered-Member (Predicate) "Not supplied yet.") 
+
+
+;;; In-Basket
+
+(Define-Frame In-Basket :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of My-Fact Predicate)) :Axioms ((Inform In-Basket)))
+
+
+ ;;; Has
+
+(Define-Frame Has :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Predicate)) :Axioms ((My-Fact Has))) 
+
+
+;;; Cost
+
+(Define-Individual Cost (Predicate) "Not supplied yet.") 
+
+
+
+;;; Money
+
+(Define-Frame Money :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Predicate)) :Axioms ((My-Fact Money)))
+
+
+;;; Put-In-Basket
+
+(Define-Individual Put-In-Basket (Action) "Not supplied yet.") 
+
+
+;;; Buy
+
+(Define-Individual Buy (Action) "Not supplied yet.") 
+
+;;; Join-Group
+
+(Define-Individual Join-Group (Action) "Not supplied yet.") 
+
+
+;;; Wait-Fact
+
+(Define-Class Wait-Fact (?X) "Not supplied yet." :Def (And (Predicate ?X))) 
+
+
+;;; Predicate
+
+(Define-Class Predicate (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Agent-Needed
+
+(Define-Function Agent-Needed (?Agent-0) :-> ?Value "Not supplied yet." :Def (And (Agent ?Agent-0) (Action ?Value))) 
+
+
+;;; Action
+
+(Define-Class Action (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Inform
+
+(Define-Class Inform (?X) "Not supplied yet." :Def (And (Predicate ?X))) 
+
+
+;;; Agent
+
+(Define-Class Agent (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+
+;;; Ask-Fact
+
+(Define-Class Ask-Fact (?X) "Not supplied yet." :Def (And (Predicate ?X))) 
+
+
+;;; PROTECTED
+
+;;; Function-Option
+(Define-Class Function-Option (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+;;; Argument-Option
+(Define-Class Argument-Option (?X) "Not supplied yet." :Def (And (Thing ?X))) 
+
+;;; Protection-Level
+(Define-Class Protection-Level (?X) "Not supplied yet." :Def (And (Thing ?X)))
+
+;;; Protect-Function
+(Define-Function Protect-Function (?Relation ?Value) :-> ?Level "Not supplied yet." :Def (And (Relation ?Relation) (Function-Option ?Value) (Protection-Level ?Level)))
+
+;;; Protect-Argument
+(Define-Function Protect-Argument (?Relation ?Argument ?Value) :-> ?Level "Not supplied yet." :Def (And (Relation ?Relation) (Argument ?Argument) (Argument-Option ?Value) (Protection-Level ?Level)))
+
+;;; Function-All
+(Define-Individual Function-All (Function-Option) "Not supplied yet.")
+
+;;; Function-Arity
+(Define-Individual Function-Arity (Function-Option) "Not supplied yet.")
+
+;;; Argument-All
+(Define-Individual Argument-All (Argument-Option) "Not supplied yet.")
+
+;;; Argument-Value
+(Define-Individual Argument-Value (Argument-Option) "Not supplied yet.")
+
+;;; Argument-Class
+(Define-Individual Argument-Class (Argument-Option) "Not supplied yet.")
+
+;;; High-Protection
+(Define-Individual High-Protection (Protection-Level) "Not supplied yet.")
+
+;;; Low-Protection
+(Define-Individual Low-Protection (Protection-Level) "Not supplied yet.")
+
+;;; ~ PROTECTED
+
+
+
+
+

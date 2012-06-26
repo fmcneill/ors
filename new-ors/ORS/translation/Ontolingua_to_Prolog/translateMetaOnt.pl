@@ -4,15 +4,15 @@ translateMetaOnt(MetaList,Scenario,ScenarioPath) :-
     	buildInform(Inform,[],MetaList),
     	buildAgentNeeded(Agents,[],MetaList),
     	buildPredicateHierarchy(PredHier,[],MetaList),
-    	%%% PROTECTED %%%
-    	buildPredicate(Predicate,[],MetaList),
+    	% PROTECTED
+    	buildFunction(Function,[],MetaList),
     	buildArgument(Argument,[],MetaList),
     	buildTasksIPerform(Tasks,[],MetaList),
     	buildAsk(Ask,[],MetaList),
     	buildWait(Wait,[],MetaList),
     	buildNonFacts(NonFacts,[],MetaList),
-    	%%% ~PROTECTED %%%
-    	writeMetaFile(MyFacts,Transitive,Inform,Agents,PredHier,Predicate,Argument,Tasks,Ask,Wait,NonFacts,Scenario,ScenarioPath).
+    	% ~PROTECTED
+    	writeMetaFile(MyFacts,Transitive,Inform,Agents,PredHier,Function,Argument,Tasks,Ask,Wait,NonFacts,Scenario,ScenarioPath).
 
 
 writeList([]).
@@ -102,39 +102,37 @@ buildPredicateHierarchy(HierList,HierSoFar,[_|Rest]) :-
  	buildPredicateHierarchy(HierList,HierSoFar,Rest).
 
 
-%%%%%%%%%%%%%%%%%
-%%% PROTECTED %%%
-%%%%%%%%%%%%%%%%%
+% PROTECTED
 
-buildPredicate(PredicateList,PredicateList,[]).
+buildFunction(FunctionList,FunctionList,[]).
 
-buildPredicate(PredicateList,PredicateSoFar,[FirstIndiv|Rest]) :-
+buildFunction(FunctionList,FunctionSoFar,[FirstIndiv|Rest]) :-
 	name('Axioms ((',AxiomsID),
 	matchExpression(_,AxiomsID,AfterAxiomsID,FirstIndiv),
 	name('(',SplitID),
 	split(AfterAxiomsID,SplitID,SplitResult),
-	buildPredicateAxioms(PredicateAxioms,[],SplitResult),
-	append(PredicateAxioms,PredicateSoFar,PredicateSoFar2),
-	buildPredicate(PredicateList,PredicateSoFar2,Rest).
+	buildFunctionAxioms(FunctionAxioms,[],SplitResult),
+	append(FunctionAxioms,FunctionSoFar,FunctionSoFar2),
+	buildFunction(FunctionList,FunctionSoFar2,Rest).
 
-buildPredicate(PredicateList,PredicateSoFar,[_|Rest]) :-
-	buildPredicate(PredicateList,PredicateSoFar,Rest).
+buildFunction(FunctionList,FunctionSoFar,[_|Rest]) :-
+	buildFunction(FunctionList,FunctionSoFar,Rest).
 
 
-buildPredicateAxioms(PredicateAxiomsList,PredicateAxiomsList,[]).
+buildFunctionAxioms(FunctionAxiomsList,FunctionAxiomsList,[]).
 
-buildPredicateAxioms(PredicateAxiomsList,PredicateAxiomsSoFar,[FirstAxiom|Rest]) :-
-	name('Protect-Predicate ',ProtectID),
+buildFunctionAxioms(FunctionAxiomsList,FunctionAxiomsSoFar,[FirstAxiom|Rest]) :-
+	name('Protect-Function ',ProtectID),
 	matchExpression(_,ProtectID,AfterProtectID,FirstAxiom),
 	name(' ',Space),
-	matchExpression(PredicateName,Space,AfterPredicateName,AfterProtectID),
-	matchExpression(ProtectedName,Space,AfterProtectedName,AfterPredicateName),
+	matchExpression(FunctionName,Space,AfterFunctionName,AfterProtectID),
+	matchExpression(ProtectedName,Space,AfterProtectedName,AfterFunctionName),
 	name(')',RightBracket),
 	matchExpression(LevelName,RightBracket,_,AfterProtectedName),
-	buildPredicateAxioms(PredicateAxiomsList,[PredicateName|[ProtectedName|[LevelName|PredicateAxiomsSoFar]]],Rest).
+	buildFunctionAxioms(FunctionAxiomsList,[FunctionName|[ProtectedName|[LevelName|FunctionAxiomsSoFar]]],Rest).
 
-buildPredicateAxioms(PredicateAxiomsList,PredicateAxiomsSoFar,[_|Rest]) :-
-	buildPredicateAxioms(PredicateAxiomsList,PredicateAxiomsSoFar,Rest).
+buildFunctionAxioms(FunctionAxiomsList,FunctionAxiomsSoFar,[_|Rest]) :-
+	buildFunctionAxioms(FunctionAxiomsList,FunctionAxiomsSoFar,Rest).
 
 
 buildArgument(ArgumentList,ArgumentList,[]).
@@ -158,12 +156,12 @@ buildArgumentAxioms(ArgumentAxiomsList,ArgumentAxiomsSoFar,[FirstSplit|Rest]) :-
 	name('Protect-Argument ',ProtectID),
 	matchExpression(_,ProtectID,AfterProtectID,FirstSplit),
 	name(' ',Space),
-	matchExpression(PredicateName,Space,AfterPredicateName,AfterProtectID),
-	matchExpression(ArgumentName,Space,AfterArgumentName,AfterPredicateName),
+	matchExpression(FunctionName,Space,AfterFunctionName,AfterProtectID),
+	matchExpression(ArgumentName,Space,AfterArgumentName,AfterFunctionName),
 	matchExpression(ProtectedName,Space,AfterProtectedName,AfterArgumentName),
 	name(')',RightBracket),
 	matchExpression(LevelName,RightBracket,_,AfterProtectedName),
-	buildArgumentAxioms(ArgumentAxiomsList,[PredicateName|[ArgumentName|[ProtectedName|[LevelName|ArgumentAxiomsSoFar]]]],Rest).
+	buildArgumentAxioms(ArgumentAxiomsList,[FunctionName|[ArgumentName|[ProtectedName|[LevelName|ArgumentAxiomsSoFar]]]],Rest).
 
 buildArgumentAxioms(ArgumentAxiomsList,ArgumentAxiomsSoFar,[_|Rest]) :-
 	buildArgumentAxioms(ArgumentAxiomsList,ArgumentAxiomsSoFar,Rest).
@@ -281,12 +279,11 @@ buildNonFactsAxioms(NonFactsAxioms,NonFactsAxiomsSoFar,[FirstSplit|Rest]) :-
 buildNonFactsAxioms(NonFactsAxioms,NonFactsAxiomsSoFar,[_|Rest]) :-
 	buildNonFactsAxioms(NonFactsAxioms,NonFactsAxiomsSoFar,Rest).
 
-%%%%%%%%%%%%%%%%%%
-%%% ~PROTECTED %%%
-%%%%%%%%%%%%%%%%%%
 
-writeMetaFile(MyFacts,Transitive,Inform,Agents,PredHierList,Predicate,Argument,Tasks,Ask,Wait,NonFacts,Scenario,ScenarioPath) :-
-   	atom_concat(ScenarioPath,'/metaOnt.pl',MetaPath),
+% ~PROTECTED
+
+writeMetaFile(MyFacts,Transitive,Inform,Agents,PredHierList,Function,Argument,Tasks,Ask,Wait,NonFacts,Scenario,ScenarioPath) :-
+   	 atom_concat(ScenarioPath,'/metaOnt.pl',MetaPath),
     	tell(MetaPath),
     	% write('nonFacts([class,member,assert]).'),nl,nl,
     	write('myFacts(['),
@@ -301,8 +298,8 @@ writeMetaFile(MyFacts,Transitive,Inform,Agents,PredHierList,Predicate,Argument,T
     	writeAgents(Agents),nl,nl,
     	writePredicateHierarchy(PredHierList),nl,nl,
     	% PROTECTED
-	write('protectPredicate(['),
-    	writePredicate(Predicate),
+	write('protectFunction(['),
+    	writeFunction(Function),
 	write(']).'),nl,nl,
 	write('protectArgument(['),
     	writeArgument(Argument),
@@ -378,21 +375,18 @@ writePredicateHierarchy([FirstClass|[FirstSuperClass|Rest]]) :-
     	write(').'),nl,
     	writePredicateHierarchy(Rest).
 
-%%%%%%%%%%%%%%%%%
-%%% PROTECTED %%%
-%%%%%%%%%%%%%%%%%
 
-writePredicate([]).
+writeFunction([]).
 
-writePredicate([FirstPredicate|[FirstProtected|[FirstLevel|[]]]]) :-
-	convertName(FirstPredicate,ConvPredicate,[]),
-    	name(PredicateName,ConvPredicate),
+writeFunction([FirstFunction|[FirstProtected|[FirstLevel|[]]]]) :-
+	convertName(FirstFunction,ConvFunction,[]),
+    	name(FunctionName,ConvFunction),
     	convertName(FirstProtected,ConvProtected,[]),
     	name(ProtectedName,ConvProtected),
     	convertName(FirstLevel,ConvLevel,[]),
     	name(LevelName,ConvLevel),
     	write('\'('),
-    	write(PredicateName),
+    	write(FunctionName),
     	write(','),
     	write(ProtectedName),
     	write(','),
@@ -400,28 +394,28 @@ writePredicate([FirstPredicate|[FirstProtected|[FirstLevel|[]]]]) :-
     	write(')\'').
     	
 
-writePredicate([FirstPredicate|[FirstProtected|[FirstLevel|Rest]]]) :-
-    	convertName(FirstPredicate,ConvPredicate,[]),
-    	name(PredicateName,ConvPredicate),
+writeFunction([FirstFunction|[FirstProtected|[FirstLevel|Rest]]]) :-
+    	convertName(FirstFunction,ConvFunction,[]),
+    	name(FunctionName,ConvFunction),
     	convertName(FirstProtected,ConvProtected,[]),
     	name(ProtectedName,ConvProtected),
     	convertName(FirstLevel,ConvLevel,[]),
     	name(LevelName,ConvLevel),
     	write('\'('),
-    	write(PredicateName),
+    	write(FunctionName),
     	write(','),
     	write(ProtectedName),
     	write(','),
     	write(LevelName),
-    	write(')\','),
-    	writePredicate(Rest).
+    	write(')\''),
+    	writeFunction(Rest).
 	
 
 writeArgument([]).
 
-writeArgument([FirstPredicate|[FirstArgument|[FirstProtected|[FirstLevel|[]]]]]) :-
-    	convertName(FirstPredicate,ConvPredicate,[]),
-    	name(PredicateName,ConvPredicate),
+writeArgument([FirstFunction|[FirstArgument|[FirstProtected|[FirstLevel|[]]]]]) :-
+    	convertName(FirstFunction,ConvFunction,[]),
+    	name(FunctionName,ConvFunction),
     	convertName(FirstArgument,ConvArgument,[]),
     	name(ArgumentName,ConvArgument),
     	convertName(FirstProtected,ConvProtected,[]),
@@ -429,7 +423,7 @@ writeArgument([FirstPredicate|[FirstArgument|[FirstProtected|[FirstLevel|[]]]]])
     	convertName(FirstLevel,ConvLevel,[]),
     	name(LevelName,ConvLevel),
     	write('\'('),
-    	write(PredicateName),
+    	write(FunctionName),
     	write(','),
     	write(ArgumentName),
     	write(','),
@@ -438,9 +432,9 @@ writeArgument([FirstPredicate|[FirstArgument|[FirstProtected|[FirstLevel|[]]]]])
     	write(LevelName),
 	write(')\'').
 
-writeArgument([FirstPredicate|[FirstArgument|[FirstProtected|[FirstLevel|Rest]]]]) :-
-    	convertName(FirstPredicate,ConvPredicate,[]),
-    	name(PredicateName,ConvPredicate),
+writeArgument([FirstFunction|[FirstArgument|[FirstProtected|[FirstLevel|Rest]]]]) :-
+    	convertName(FirstFunction,ConvFunction,[]),
+    	name(FunctionName,ConvFunction),
     	convertName(FirstArgument,ConvArgument,[]),
     	name(ArgumentName,ConvArgument),
     	convertName(FirstProtected,ConvProtected,[]),
@@ -448,14 +442,14 @@ writeArgument([FirstPredicate|[FirstArgument|[FirstProtected|[FirstLevel|Rest]]]
     	convertName(FirstLevel,ConvLevel,[]),
     	name(LevelName,ConvLevel),
     	write('\'('),
-    	write(PredicateName),
+    	write(FunctionName),
     	write(','),
     	write(ArgumentName),
     	write(','),
     	write(ProtectedName),
     	write(','),
     	write(LevelName),
-    	write(')\','),
+    	write(')\''),
     	writeArgument(Rest).
 
 split(String, "", SplitResult) :- 
@@ -473,7 +467,7 @@ properSplit(String, Delimiters, SplitResult) :-
 	SplitResult = [String]
 	).
 
-%%%%%%%%%%%%%%%%%%
-%%% ~PROTECTED %%%
-%%%%%%%%%%%%%%%%%%
+
+% ~PROTECTED
+
 
