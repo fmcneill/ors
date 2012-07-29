@@ -345,9 +345,143 @@ compareArity(Me,Agent,_,RelevantSurprisingQuestion,NameRSQ,ArityRSQ,_,Precond,Ar
 % once a diagnosis has been made, the diagnostic algorithm calls the repair system to implement it.  AttemptRefine monitors whether this has been successful, and returns the outcome.
 
 attemptRefine(Scenario,RefineType,OntType,RefineInfo,Outcome) :-
-        consultMeta(Scenario,RefineType,OntType,RefineInfo,Outcome).
+	Approval = yes,
+	ask(RefineType,RefineInfo,Approval),
+	Approval == yes ->
+    consultMeta(Scenario,RefineType,OntType,RefineInfo,Outcome);
+	nl,nl,write('*** I will not perform the repair.'),nl.
 	
+ask(precondAA,[Rule,Precond],Approval) :-
+	nl,nl,write('Precondition refinement:'),nl,
+	write('The rule is: '),write(Rule),nl,
+	write('The precondition is: '),write(Precond),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+	
+ask(precondAA,[Rule,RightClass,WrongClass],Approval) :-
+	nl,nl,write('Precondition domain refinement:'),nl,
+	write('The rule is: '),write(Rule),nl,
+	write('The right class is: '),write(RightClass),nl,
+	write('The wrong class is: '),write(WrongClass),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
 
+ask(propositionalAA,[Pred,ArgType,ArgValue,Position,Arity],Approval) :-
+	nl,nl,write('Propositional refinement:'),nl,
+	write('The predicate is: '),write(Pred),nl,
+	write('The argument type is: '),write(ArgType),nl,
+	write('The argument value is: '),write(ArgValue),nl,
+	write('The position is: '),write(Position),nl,
+	write('The arity is: '),write(Arity),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(propositionalAANewType,[OldPred,NewPred,_,_,_],Approval) :-
+	nl,nl,write('Propositional refinement:'),nl,
+	write('The old predicate is: '),write(OldPred),nl,
+	write('The new predicate is: '),write(NewPred),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+	
+ask(propositionalAANewType,[_,Pred,ArgType,ArgValue,_],Approval) :-
+	nl,nl,write('Propositional refinement:'),nl,
+	write('The predicate predicate is: '),write(Pred),nl,
+	write('The argument type is: '),write(ArgType),nl,
+	write('The argument value is: '),write(ArgValue),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(propositionalA,[PredName,ArgPosition],Approval) :-
+	nl,nl,write('Propositional refinement:'),nl,
+	write('The predicate name is: '),write(PredName),nl,
+	write('The argument position is: '),write(ArgPosition),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(domainA,[Pred,OldType,NewType,NewTypeSuperType,Position],Approval) :-
+	nl,nl,write('Domain refinement:'),nl,
+	write('The predicate is: '),write(Pred),nl,
+	write('The old type is: '),write(OldType),nl,
+	write('The new type is: '),write(NewType),nl,
+	write('The super type of the new type is: '),write(NewTypeSuperType),nl,
+	write('The position is: '),write(Position),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(predicateAA,[OldPred,NewPred,Rule],Approval) :-
+	nl,nl,write('Predicate refinement:'),nl,
+	write('The old predicate is: '),write(OldPred),nl,
+	write('The new predicate is: '),write(NewPred),nl,
+	write('The rule is: '),write(Rule),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+	
+ask(predicateAANewType,[OldPredName,NewPredName,_],Approval) :-
+	nl,nl,write('Predicate refinement:'),nl,
+	write('The old predicate name is: '),write(OldPredName),nl,
+	write('The new predicate name is: '),write(NewPredName),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(predicateAANewType,[OldPred,NewPred,_],Approval) :-
+	nl,nl,write('Predicate refinement:'),nl,
+	write('The old predicate is: '),write(OldPred),nl,
+	write('The new predicate is: '),write(NewPred),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(predicateAANewType,[OldPred,NewPred,Rule],Approval) :-
+	nl,nl,write('Predicate refinement:'),nl,
+	write('The old predicate is: '),write(OldPred),nl,
+	write('The new predicate is: '),write(NewPred),nl,
+	write('The rule is: '),write(Rule),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+	
+ask(problemPrecond,[Precond,_,FirstIndividual],Approval) :-
+	nl,nl,write('Predicate refinement:'),nl,
+	write('The precondition is: '),write(Precond),nl,
+	write('The first individual is: '),write(FirstIndividual),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(problemPrecond,[_,Precond,FirstIndividual],Approval) :-
+	nl,nl,write('Predicate refinement:'),nl,
+	write('The precondition is: '),write(Precond),nl,
+	write('The first individual is: '),write(FirstIndividual),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(switchArgs,PredName,Approval) :-
+	nl,nl,write('Switching arguments:'),nl,
+	write('The predicate name is: '),write(PredName),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(removePostcond,[PredName,RuleName],Approval) :-
+	nl,nl,write('Switching arguments:'),nl,
+	write('The predicate name is: '),write(PredName),nl,
+	write('The rule name is: '),write(RuleName),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(negatePrecond,[RuleName,PrecondName,negToPos],Approval) :-
+	nl,nl,write('Negate preconditions of an action:'),nl,
+	write('The rule name is: '),write(RuleName),nl,
+	write('The precondition name is: '),write(PrecondName),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(changeInstDef,[Item,WrongClass,Class],Approval) :-
+	nl,nl,write('Changing an instance definition:'),nl,
+	write('The item is: '),write(Item),nl,
+	write('The wrong class is: '),write(WrongClass),nl,
+	write('The class should be: '),write(Class),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+	
+	
+	
 % attemptRefine(Scenario,RefineType,OntType,RefineInfo,success) :-
 %       refine(Scenario,RefineType,OntType,RefineInfo),
 %       nl,write('the appropriate repair has been performed'),nl.

@@ -1,4 +1,6 @@
 :- use_module(library(lists)),use_module(library(random)).
+:- use_module(library(prologbeans)).
+:- use_module(library(codesio), [read_from_codes/2]).
 
 
 % PROTECTED
@@ -544,7 +546,7 @@ processLine(propositionalAA,[Pred,_,_,Position,_],Line) :-
 	write(NewLineName).
 
 
-processLine(propositionalAA,[Pred,_,_,Position,_],Line) :-
+processLine(propositionalAA,[Pred,_,ArgValue,Position,_],Line) :-
 	name('(Define-Frame ',DefAx),
 	matchExpression([],DefAx,_,Line),
 	name(Pred,PredChars),
@@ -556,7 +558,7 @@ processLine(propositionalAA,[Pred,_,_,Position,_],Line) :-
 		matchExpression(Vars,EndVars,RestLine,AfterPred)
 	),
 	VarPosition is Position - 1,
-	insertNewVar([],Vars,VarPosition,NewVars),
+	insertNewVar([],Vars,VarPosition,NewVars,Pred,ArgValue),
 	append(NewVars,EndVars,FullVars),
 	append(FullVars,RestLine,NewAfter),
 	append(BeforePred,PredChars,BeforeVars),
@@ -676,7 +678,6 @@ processLine(propositionalA,[PredName,ArgPosition],Line) :-
 	),
 	name(PredName,NameChars),
 	matchExpression([],NameChars,Def,AxNameAndDef),
-	test,
 	name(') ',EndArgList),
 	matchExpression(ArgList,EndArgList,ArgDefs,Def),
 	removeArg(ArgList,ArgPosition,[],NewArgList),
@@ -731,7 +732,6 @@ processLine(propositionalA,[PredName,ArgPosition],Line) :-
 	name(NewLine,NewLineChars),
 	write(NewLine).
 
-test.
 
 
 % 3. Domain Refinement
@@ -1351,7 +1351,7 @@ removeMarkers(Vars,GoodVars) :-
 removeMarkers(GoodVars,GoodVars).
 
 
-insertNewVar(BeforeVars,AfterVars,0,NewVars) :-
+insertNewVar(BeforeVars,AfterVars,0,NewVars,Pred,ArgValue) :-
 	name(' ',Space),
 	(   matchExpression(ImmedBefore,Space,RestVars,AfterVars),
 		BeforeVars = GoodBefore
@@ -1366,20 +1366,48 @@ insertNewVar(BeforeVars,AfterVars,0,NewVars) :-
 		)
 	),
 	append(GoodBefore,ImmedBefore,FullBefore),
-	name('Meta-Var',Meta),
+	%% Register acceptable queries and start the server (using default port)
+	register_query(query(R,S), query(R,S,FullBefore,Pred,ArgValue)),
+	register_query(evaluate(I), evaluate(I)),
+	register_query(shutdown, shutdown_serverpb),
+	start,
+	meta_var(Meta_Var),
+	name(Meta_Var,Meta),
 	append(FullBefore,Meta,All),
 	returnSpaces(All,[],SpacedVars),
 	append(SpacedVars,Space,FullySpacedVars),
 	append(FullySpacedVars,RestVars,NewVars).
 
-
-insertNewVar(BeforeVars,AfterVars,Position,NewVars) :-
+insertNewVar(BeforeVars,AfterVars,Position,NewVars,Pred,ArgValue) :-
 	name(' ',Space),
 	matchExpression(BeforeThis,Space,AfterThis,AfterVars),
 	NewPosition is Position - 1,
 	append(BeforeVars,BeforeThis,NewBefore),
-	insertNewVar(NewBefore,AfterThis,NewPosition,NewVars).
+	insertNewVar(NewBefore,AfterThis,NewPosition,NewVars,Pred,ArgValue).	
 
+
+%% Retrieve information of the new variable
+query(R1,R2,FullBefore,Pred,ArgValue) :-
+	name(' ',Space),
+	name('(',LeftBracket),
+	name(')',RightBracket),
+	name(ArgValue,R1),
+	name(Pred,PredChars),
+	append(PredChars,Space,Chars1),
+	append(Chars1,LeftBracket,Chars2),
+	append(Chars2,FullBefore,Chars3),
+	append(Chars3,RightBracket,R2).
+
+
+%% We have received a code-list
+%% that needs to be converted into an expression
+evaluate(Chars) :-
+ 	read_from_codes(Chars,Meta_Var),
+	asserta(meta_var(Meta_Var)).
+
+
+shutdown_serverpb :-
+    shutdown(now).
 
 
 returnSpaces([],VarsSoFar,NewVars) :-
