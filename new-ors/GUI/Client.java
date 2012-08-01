@@ -77,14 +77,28 @@ public class Client implements ActionListener {
 
     public void actionPerformed(ActionEvent event) {
         String message;
+        String inputText = input.getText().trim();
+
+        if (inputText.equals("")) {
+            return;
+        }
 
         try {
+            if (!inputText.startsWith("'")) {
+                inputText = "'" + inputText;
+            }
+            if (inputText.endsWith(".")) {
+                inputText = inputText.substring(0, inputText.length() - 2);
+            }
+            if (!inputText.endsWith("'")) {
+                inputText = inputText + "'";
+            }
             Bindings bindings = new Bindings().bind("I",
-                    input.getText() + '.');
+                    inputText + '.');
             QueryAnswer answer =
                     session.executeQuery("evaluate(I)", bindings);
             if (answer.getError() == null) {
-                message = input.getText() + '\n';
+                message = inputText + '\n';
                 text.append(message);
                 input.setText("");
             } else {
