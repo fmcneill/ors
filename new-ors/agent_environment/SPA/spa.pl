@@ -372,6 +372,12 @@ resolve(MyName,request,Query,QAgent) :-
 	write('I am saying '),write(Answer),write(' to '),write(Query),nl,
 	out(reply(MyName,QAgent,Query,Answer)).
 
+resolve(MyName,types,NameRSQ,QAgent) :-
+	test,
+	write('I am finding the argument types of '),write(NameRSQ),nl,
+	solve(types,NameRSQ,Types),
+	write('The types are '),write(Types),nl,
+	out(reply(MyName,QAgent,types,[NameRSQ,Types])).
 
 
 
@@ -408,6 +414,9 @@ solve(MyName,request,Action,ok,Agent) :-
 
 
 
+solve(types,RSQ,Types) :-
+	predicate(Predicate),
+	Predicate =.. [money|Types].
 
 
 
@@ -433,18 +442,18 @@ solve(_MyName,request,Action,problem,_Agent) :-
 
 %% **** horrible hack for Agnieszka's evaluation ***
 
-solve(MyName,request,Action,ok,Agent) :-
-	write('I want to perform '),nl,write(Action),write('for '),write(Agent),nl,nl,
-	tasksIPerform(TasksList),	
-	Action =.. [ActionName|_],
-	member(ActionName,TasksList),
-	addBogusArg(Action,BogusAction),
-	rule(BogusAction,[_,Preconds,_]),
- 	ask(AskList),nl,
-	wait(WaitList),
-	write('I\'m checking preconds...'),nl,nl,
-	checkPreconds(MyName,Preconds,AskList,WaitList,Agent,[],[]),
-	write(Action),write(' has been completed satisfactorily.'),nl,nl.
+%solve(MyName,request,Action,ok,Agent) :-
+%	write('I want to perform '),nl,write(Action),write('for '),write(Agent),nl,nl,
+%	tasksIPerform(TasksList),	
+%	Action =.. [ActionName|_],
+%	member(ActionName,TasksList),
+%	addBogusArg(Action,BogusAction),
+%	rule(BogusAction,[_,Preconds,_]),
+% 	ask(AskList),nl,
+%	wait(WaitList),
+%	write('I\'m checking preconds...'),nl,nl,
+%	checkPreconds(MyName,Preconds,AskList,WaitList,Agent,[],[]),
+%	write(Action),write(' has been completed satisfactorily.'),nl,nl.
 
 
 addBogusArg(Action,BogusAction) :-
@@ -763,6 +772,7 @@ checkWithAgent(MyName,[Question|T],Agent) :-
 	Question = Answer,
 	checkWithAgent(MyName,T,Agent).
 
+test.
 	    
 %checkWaitingThings(+ListOfWaitingThings): once all the other preconditions have been evaluated, all possible variables have been bound, so the list of waiting things can be evaluated.
 

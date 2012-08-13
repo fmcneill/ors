@@ -8,7 +8,7 @@ use_module(library(codesio)).
 
 
 
-start :-
+startpa :-
 scenario_name(Sce),
 set_prolog_flag(single_var_warnings, off),
 set_prolog_flag(discontiguous_warnings, off),
@@ -18,6 +18,7 @@ ontoType(OntologyType),
 experience_sharing(OnOrOff),
 plan(OntologyType,Sce,OnOrOff).
 
+test.
 
 % get_absolute_path(+RelativePath, ?AbsolutePath)
 % e.g. get_absolute_path('/agent_environment', AbsolutePath).
