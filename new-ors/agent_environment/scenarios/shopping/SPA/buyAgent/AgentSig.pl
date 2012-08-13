@@ -2,15 +2,15 @@
 
 rule(buy(Agent,Item),
      [rule3,
-      [inBasket(Agent,Item,PseudoVar0),money(Agent,dollars,Amount),cost(Item,Price),calculation(Price  < Amount)],
-      [inform(has(Agent,Item)),calculation(Newamount is Amount - Price),money(Agent,dollars,Newamount),not(money(Agent,dollars,Amount))]
+      [inBasket(Agent,Item,PseudoVar0),money(Agent,Currency,Amount),cost(Item,Price),calculation(Price  < Amount)],
+      [inform(has(Agent,Item)),calculation(Newamount is Amount - Price),money(Agent,Currency,Newamount),not(money(Agent,Currency,Amount))]
     ]).
 
 
 rule(buy(Agent,Item,Currency),
      [rule3,
-      [inBasket(Agent,Item,PseudoVar0),money(Agent,dollars,Amount),cost(Item,Price),calculation(Price  < Amount)],
-      [inform(has(Agent,Item)),calculation(Newamount is Amount - Price),money(Agent,dollars,Newamount),not(money(Agent,dollars,Amount))]
+      [inBasket(Agent,Item,PseudoVar0),money(Agent,Currency,Amount),cost(Item,Price),calculation(Price  < Amount)],
+      [inform(has(Agent,Item)),calculation(Newamount is Amount - Price),money(Agent,Currency,Newamount),not(money(Agent,Currency,Amount))]
     ]).
 
 
@@ -37,6 +37,7 @@ subclass(currency,thing).
 subclass(confirmationNumber,thing).
 subclass(sitVar,thing).
 
+predicate(money(agent,currency,amount)).
 
 
 

@@ -105,6 +105,10 @@
 
 (Define-Individual Dollars (Currency) "Not supplied yet.")
 
+;;; Euros
+
+(Define-Individual Euros (Currency) "Not supplied yet.")
+
 ;;; Sterling
 
 (Define-Function Sterling (?Agent-0 ?Situation) :-> ?Value "Not supplied yet." :Def (And (Agent ?Agent-0) (Number ?Value) (Sit-Var ?Situation)))

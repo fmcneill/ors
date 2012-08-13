@@ -8,6 +8,7 @@ class(bookShopGroup,shoppingGroup).
 class(aiGroup,academicGroup).
 class(shoppingAgent,agent).
 class(dollars,currency).
+class(euros,currency).
 class(pseudoVar,confirmationNumber).
 class(start,sitVar).
 

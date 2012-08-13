@@ -109,7 +109,6 @@ diagnoseFailure(Me,OntType,Scenario,Action,Agent,[_|_],Just,[RelevantSurprisingQ
 
 diagnoseFailure(Me,OntType,Scenario,Action,Agent,[_|_],_,[RelevantSurprisingQuestion|_],Outcome,Repair) :-
         nl,write('DIAGNOSIS: precondition anti-abstraction '),nl,
-        test1,
         write(Action),write(' requires an extra precondition: '),write(RelevantSurprisingQuestion),nl,
         write('WARNING: This is a guess'),nl,nl,
         % ** add in link to new repair here (morike's).
@@ -370,7 +369,6 @@ ask(propositionalAA,[Pred,ArgType,ArgValue,Position,Arity],Approval) :-
 	nl,nl,write('Propositional refinement:'),nl,
 	write('The predicate is: '),write(Pred),nl,
 	write('The argument type is: '),write(ArgType),nl,
-	write('The argument value is: '),write(ArgValue),nl,
 	write('The position is: '),write(Position),nl,
 	write('The arity is: '),write(Arity),nl,
 	nl,nl,write('Do you want to perform this refinement? (yes.) '),
@@ -385,7 +383,7 @@ ask(propositionalAANewType,[OldPred,NewPred,_,_,_],Approval) :-
 	
 ask(propositionalAANewType,[_,Pred,ArgType,ArgValue,_],Approval) :-
 	nl,nl,write('Propositional refinement:'),nl,
-	write('The predicate predicate is: '),write(Pred),nl,
+	write('The predicate is: '),write(Pred),nl,
 	write('The argument type is: '),write(ArgType),nl,
 	write('The argument value is: '),write(ArgValue),nl,
 	nl,nl,write('Do you want to perform this refinement? (yes.) '),
@@ -550,9 +548,15 @@ propositionalRepair(_,_,_,_,_,_,_,_,_,failure,[]) :-
 % checkUnmatchedClass(+PlanningAgent,+ServiceProvidingAgent,+NameRSQ,+UnmatchedClass,+Position,+ArityExP,+RSQ,-Outcome)
 % in proprositional anti-abstraction, there is always an unmatched class.  checkUnmatchedClasses performs propositional anti-abstraction on the basis of what this unmatched class is and whether it is already known.  If it is not, it must be added to the class hierarchy.
 
-checkUnmatchedClass(_,_,NameRSQ,uninstantiated,_,_,_,_,_,failure) :-
+checkUnmatchedClass(_,Agent,NameRSQ,uninstantiated,_,ArityExP,_,OntType,Scenario,Outcome) :-
         write(NameRSQ),write(' requires an extra argument of undetermined type.'),nl,
-        write('Repair impossible: We don\'t know the type of the argument to add.').
+		out(query(Me,Agent,types,NameRSQ)),
+		in_noblock(reply(Agent,Me,types,[NameRSQ,SA_Types])),
+		test,
+		findMissingType(NameRSQ,SA_Types,MissingType,MissingPos),
+		propAATranslate(NameRSQ,MissingType,MissingPos,ArityExP,TransInfo),
+		attemptRefine(Scenario,propositionalAA,OntType,TransInfo,Outcome).
+
 
 checkUnmatchedClass(_,_,NameRSQ,thing,Position,ArityExP,_,OntType,Scenario,Outcome) :-
         write(NameRSQ),write(' requires an extra argument of type '),write(thing),nl,nl,
@@ -726,6 +730,20 @@ problemPrecondReply(_,_,FirstPrecond,_,no,FirstPrecond).
 
 problemPrecondReply(Me,Agent,_,RestPreconds,yes,Problem) :-
         problemPreconds(Me,Agent,RestPreconds,Problem).
+
+
+%findMissingType - finds the arguments of a pred and compares them to what they should be (propAA).
+
+findMissingType(NameRSQ,SA_Types,MissingType,MissingPos) :-
+	predicate(Predicate),
+	Predicate =.. [NameRSQ|PA_Types],
+	findMissingType(PA_Types,SA_Types,1,MissingType,MissingPos).
+	
+findMissingType([Type1|RestTypes],[Type1|OtherTypes],CurrentPos,MissingType,MissingPos) :-
+	NewPos is CurrentPos + 1,
+	findMissingType(RestTypes,OtherTypes,NewPos,MissingType,MissingPos).
+	
+findMissingType([Type1|_RestTypes],[Type2|_OtherTypes],MissingPos,Type2,MissingPos).
 
 
 % matchesPrecond(+SurprisingQuestion,-RSQName,-RSQArity,+FailedAction,-Precondition,-ArityPrecond)
