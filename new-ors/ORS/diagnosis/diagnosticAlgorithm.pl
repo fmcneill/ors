@@ -109,7 +109,6 @@ diagnoseFailure(Me,OntType,Scenario,Action,Agent,[_|_],Just,[RelevantSurprisingQ
 
 diagnoseFailure(Me,OntType,Scenario,Action,Agent,[_|_],_,[RelevantSurprisingQuestion|_],Outcome,Repair) :-
         nl,write('DIAGNOSIS: precondition anti-abstraction '),nl,
-        test1,
         write(Action),write(' requires an extra precondition: '),write(RelevantSurprisingQuestion),nl,
         write('WARNING: This is a guess'),nl,nl,
         % ** add in link to new repair here (morike's).
@@ -345,9 +344,142 @@ compareArity(Me,Agent,_,RelevantSurprisingQuestion,NameRSQ,ArityRSQ,_,Precond,Ar
 % once a diagnosis has been made, the diagnostic algorithm calls the repair system to implement it.  AttemptRefine monitors whether this has been successful, and returns the outcome.
 
 attemptRefine(Scenario,RefineType,OntType,RefineInfo,Outcome) :-
-        consultMeta(Scenario,RefineType,OntType,RefineInfo,Outcome).
+	Approval = yes,
+	ask(RefineType,RefineInfo,Approval),
+	Approval == yes ->
+    consultMeta(Scenario,RefineType,OntType,RefineInfo,Outcome);
+	nl,nl,write('*** I will not perform the repair.'),nl.
 	
+ask(precondAA,[Rule,Precond],Approval) :-
+	nl,nl,write('Precondition refinement:'),nl,
+	write('The rule is: '),write(Rule),nl,
+	write('The precondition is: '),write(Precond),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+	
+ask(precondAA,[Rule,RightClass,WrongClass],Approval) :-
+	nl,nl,write('Precondition domain refinement:'),nl,
+	write('The rule is: '),write(Rule),nl,
+	write('The right class is: '),write(RightClass),nl,
+	write('The wrong class is: '),write(WrongClass),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
 
+ask(propositionalAA,[Pred,ArgType,ArgValue,Position,Arity],Approval) :-
+	nl,nl,write('Propositional refinement:'),nl,
+	write('The predicate is: '),write(Pred),nl,
+	write('The argument type is: '),write(ArgType),nl,
+	write('The position is: '),write(Position),nl,
+	write('The arity is: '),write(Arity),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(propositionalAANewType,[OldPred,NewPred,_,_,_],Approval) :-
+	nl,nl,write('Propositional refinement:'),nl,
+	write('The old predicate is: '),write(OldPred),nl,
+	write('The new predicate is: '),write(NewPred),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+	
+ask(propositionalAANewType,[_,Pred,ArgType,ArgValue,_],Approval) :-
+	nl,nl,write('Propositional refinement:'),nl,
+	write('The predicate is: '),write(Pred),nl,
+	write('The argument type is: '),write(ArgType),nl,
+	write('The argument value is: '),write(ArgValue),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(propositionalA,[PredName,ArgPosition],Approval) :-
+	nl,nl,write('Propositional refinement:'),nl,
+	write('The predicate name is: '),write(PredName),nl,
+	write('The argument position is: '),write(ArgPosition),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(domainA,[Pred,OldType,NewType,NewTypeSuperType,Position],Approval) :-
+	nl,nl,write('Domain refinement:'),nl,
+	write('The predicate is: '),write(Pred),nl,
+	write('The old type is: '),write(OldType),nl,
+	write('The new type is: '),write(NewType),nl,
+	write('The super type of the new type is: '),write(NewTypeSuperType),nl,
+	write('The position is: '),write(Position),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(predicateAA,[OldPred,NewPred,Rule],Approval) :-
+	nl,nl,write('Predicate refinement:'),nl,
+	write('The old predicate is: '),write(OldPred),nl,
+	write('The new predicate is: '),write(NewPred),nl,
+	write('The rule is: '),write(Rule),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+	
+ask(predicateAANewType,[OldPredName,NewPredName,_],Approval) :-
+	nl,nl,write('Predicate refinement:'),nl,
+	write('The old predicate name is: '),write(OldPredName),nl,
+	write('The new predicate name is: '),write(NewPredName),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(predicateAANewType,[OldPred,NewPred,_],Approval) :-
+	nl,nl,write('Predicate refinement:'),nl,
+	write('The old predicate is: '),write(OldPred),nl,
+	write('The new predicate is: '),write(NewPred),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(predicateAANewType,[OldPred,NewPred,Rule],Approval) :-
+	nl,nl,write('Predicate refinement:'),nl,
+	write('The old predicate is: '),write(OldPred),nl,
+	write('The new predicate is: '),write(NewPred),nl,
+	write('The rule is: '),write(Rule),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+	
+ask(problemPrecond,[Precond,_,FirstIndividual],Approval) :-
+	nl,nl,write('Predicate refinement:'),nl,
+	write('The precondition is: '),write(Precond),nl,
+	write('The first individual is: '),write(FirstIndividual),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(problemPrecond,[_,Precond,FirstIndividual],Approval) :-
+	nl,nl,write('Predicate refinement:'),nl,
+	write('The precondition is: '),write(Precond),nl,
+	write('The first individual is: '),write(FirstIndividual),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(switchArgs,PredName,Approval) :-
+	nl,nl,write('Switching arguments:'),nl,
+	write('The predicate name is: '),write(PredName),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(removePostcond,[PredName,RuleName],Approval) :-
+	nl,nl,write('Switching arguments:'),nl,
+	write('The predicate name is: '),write(PredName),nl,
+	write('The rule name is: '),write(RuleName),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(negatePrecond,[RuleName,PrecondName,negToPos],Approval) :-
+	nl,nl,write('Negate preconditions of an action:'),nl,
+	write('The rule name is: '),write(RuleName),nl,
+	write('The precondition name is: '),write(PrecondName),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+
+ask(changeInstDef,[Item,WrongClass,Class],Approval) :-
+	nl,nl,write('Changing an instance definition:'),nl,
+	write('The item is: '),write(Item),nl,
+	write('The wrong class is: '),write(WrongClass),nl,
+	write('The class should be: '),write(Class),nl,
+	nl,nl,write('Do you want to perform this refinement? (yes.) '),
+	read(yes).
+	
+	
+	
 % attemptRefine(Scenario,RefineType,OntType,RefineInfo,success) :-
 %       refine(Scenario,RefineType,OntType,RefineInfo),
 %       nl,write('the appropriate repair has been performed'),nl.
@@ -416,9 +548,15 @@ propositionalRepair(_,_,_,_,_,_,_,_,_,failure,[]) :-
 % checkUnmatchedClass(+PlanningAgent,+ServiceProvidingAgent,+NameRSQ,+UnmatchedClass,+Position,+ArityExP,+RSQ,-Outcome)
 % in proprositional anti-abstraction, there is always an unmatched class.  checkUnmatchedClasses performs propositional anti-abstraction on the basis of what this unmatched class is and whether it is already known.  If it is not, it must be added to the class hierarchy.
 
-checkUnmatchedClass(_,_,NameRSQ,uninstantiated,_,_,_,_,_,failure) :-
+checkUnmatchedClass(_,Agent,NameRSQ,uninstantiated,_,ArityExP,_,OntType,Scenario,Outcome) :-
         write(NameRSQ),write(' requires an extra argument of undetermined type.'),nl,
-        write('Repair impossible: We don\'t know the type of the argument to add.').
+		out(query(Me,Agent,types,NameRSQ)),
+		in_noblock(reply(Agent,Me,types,[NameRSQ,SA_Types])),
+		test,
+		findMissingType(NameRSQ,SA_Types,MissingType,MissingPos),
+		propAATranslate(NameRSQ,MissingType,MissingPos,ArityExP,TransInfo),
+		attemptRefine(Scenario,propositionalAA,OntType,TransInfo,Outcome).
+
 
 checkUnmatchedClass(_,_,NameRSQ,thing,Position,ArityExP,_,OntType,Scenario,Outcome) :-
         write(NameRSQ),write(' requires an extra argument of type '),write(thing),nl,nl,
@@ -592,6 +730,20 @@ problemPrecondReply(_,_,FirstPrecond,_,no,FirstPrecond).
 
 problemPrecondReply(Me,Agent,_,RestPreconds,yes,Problem) :-
         problemPreconds(Me,Agent,RestPreconds,Problem).
+
+
+%findMissingType - finds the arguments of a pred and compares them to what they should be (propAA).
+
+findMissingType(NameRSQ,SA_Types,MissingType,MissingPos) :-
+	predicate(Predicate),
+	Predicate =.. [NameRSQ|PA_Types],
+	findMissingType(PA_Types,SA_Types,1,MissingType,MissingPos).
+	
+findMissingType([Type1|RestTypes],[Type1|OtherTypes],CurrentPos,MissingType,MissingPos) :-
+	NewPos is CurrentPos + 1,
+	findMissingType(RestTypes,OtherTypes,NewPos,MissingType,MissingPos).
+	
+findMissingType([Type1|_RestTypes],[Type2|_OtherTypes],MissingPos,Type2,MissingPos).
 
 
 % matchesPrecond(+SurprisingQuestion,-RSQName,-RSQArity,+FailedAction,-Precondition,-ArityPrecond)
