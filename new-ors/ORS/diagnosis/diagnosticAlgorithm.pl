@@ -551,8 +551,11 @@ propositionalRepair(_,_,_,_,_,_,_,_,_,failure,[]) :-
 checkUnmatchedClass(_,Agent,NameRSQ,uninstantiated,_,ArityExP,_,OntType,Scenario,Outcome) :-
         write(NameRSQ),write(' requires an extra argument of undetermined type.'),nl,
 		out(query(Me,Agent,types,NameRSQ)),
-		in_noblock(reply(Agent,Me,types,[NameRSQ,SA_Types])),
-		test,
+		(	in_noblock(reply(Agent,Me,types,[NameRSQ,SA_Types]))
+		;
+			sleep(1),
+			in_noblock(reply(Agent,Me,types,[NameRSQ,SA_Types]))
+		 ),
 		findMissingType(NameRSQ,SA_Types,MissingType,MissingPos),
 		propAATranslate(NameRSQ,MissingType,MissingPos,ArityExP,TransInfo),
 		attemptRefine(Scenario,propositionalAA,OntType,TransInfo,Outcome).
