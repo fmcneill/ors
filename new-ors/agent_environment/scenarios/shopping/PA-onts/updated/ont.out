@@ -86,7 +86,7 @@
 
 ;;; Our-Mutual-Friend
 
-(Define-Frame Our-Mutual-Friend  :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Book)) :Axioms ((Cost Our-Mutual-Friend 9 [(Buy Shopping-Agent Our-Mutual-Friend Dollars)(Put-In-Basket Shopping-Agent Book-Shop-Group Our-Mutual-Friend)(Join-Group Shopping-Agent Book-Shop-Group)(Start)])))
+(Define-Frame Our-Mutual-Friend  :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Book)) :Axioms ((Cost Our-Mutual-Friend 9 [(Buy Shopping-Agent Our-Mutual-Friend Euros)(Put-In-Basket Shopping-Agent Book-Shop-Group Our-Mutual-Friend)(Join-Group Shopping-Agent Book-Shop-Group)(Start)])))
 
 ;;; Book-Shop-Group
 
@@ -98,7 +98,7 @@
 
 ;;; Shopping-Agent
 
-(Define-Frame Shopping-Agent :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent) (Registered-Member Ai-Group [(Buy Shopping-Agent Our-Mutual-Friend Dollars)(Put-In-Basket Shopping-Agent Book-Shop-Group Our-Mutual-Friend)(Join-Group Shopping-Agent Book-Shop-Group)(Start)]) (Choose-Thing Our-Mutual-Friend [(Buy Shopping-Agent Our-Mutual-Friend Dollars)(Put-In-Basket Shopping-Agent Book-Shop-Group Our-Mutual-Friend)(Join-Group Shopping-Agent Book-Shop-Group)(Start)]) (Registered-Member Book-Shop-Group [(Buy Shopping-Agent Our-Mutual-Friend Dollars)(Put-In-Basket Shopping-Agent Book-Shop-Group Our-Mutual-Friend)(Join-Group Shopping-Agent Book-Shop-Group)(Start)]) (In-Basket Our-Mutual-Friend 47899 [(Buy Shopping-Agent Our-Mutual-Friend Dollars)(Put-In-Basket Shopping-Agent Book-Shop-Group Our-Mutual-Friend)(Join-Group Shopping-Agent Book-Shop-Group)(Start)]) (Has Our-Mutual-Friend [(Buy Shopping-Agent Our-Mutual-Friend Dollars)(Put-In-Basket Shopping-Agent Book-Shop-Group Our-Mutual-Friend)(Join-Group Shopping-Agent Book-Shop-Group)(Start)])) :Axioms ((Money Shopping-Agent Dollars 91 [(Buy Shopping-Agent Our-Mutual-Friend Dollars)(Put-In-Basket Shopping-Agent Book-Shop-Group Our-Mutual-Friend)(Join-Group Shopping-Agent Book-Shop-Group)(Start)])))
+(Define-Frame Shopping-Agent :Own-Slots ((Documentation "Not supplied yet.") (Instance-Of Agent) (Registered-Member Ai-Group [(Buy Shopping-Agent Our-Mutual-Friend Euros)(Put-In-Basket Shopping-Agent Book-Shop-Group Our-Mutual-Friend)(Join-Group Shopping-Agent Book-Shop-Group)(Start)]) (Choose-Thing Our-Mutual-Friend [(Buy Shopping-Agent Our-Mutual-Friend Euros)(Put-In-Basket Shopping-Agent Book-Shop-Group Our-Mutual-Friend)(Join-Group Shopping-Agent Book-Shop-Group)(Start)]) (Registered-Member Book-Shop-Group [(Buy Shopping-Agent Our-Mutual-Friend Euros)(Put-In-Basket Shopping-Agent Book-Shop-Group Our-Mutual-Friend)(Join-Group Shopping-Agent Book-Shop-Group)(Start)]) (In-Basket Our-Mutual-Friend 47899 [(Buy Shopping-Agent Our-Mutual-Friend Euros)(Put-In-Basket Shopping-Agent Book-Shop-Group Our-Mutual-Friend)(Join-Group Shopping-Agent Book-Shop-Group)(Start)]) (Has Our-Mutual-Friend [(Buy Shopping-Agent Our-Mutual-Friend Euros)(Put-In-Basket Shopping-Agent Book-Shop-Group Our-Mutual-Friend)(Join-Group Shopping-Agent Book-Shop-Group)(Start)])) :Axioms ((Money Shopping-Agent Euros 91 [(Buy Shopping-Agent Our-Mutual-Friend Euros)(Put-In-Basket Shopping-Agent Book-Shop-Group Our-Mutual-Friend)(Join-Group Shopping-Agent Book-Shop-Group)(Start)])))
 
 ;;; Currency
 
@@ -107,6 +107,10 @@
 ;;; Dollars
 
 (Define-Individual Dollars (Currency) "Not supplied yet.")
+
+;;; Euros
+
+(Define-Individual Euros (Currency) "Not supplied yet.")
 
 ;;; Sterling
 
@@ -128,7 +132,7 @@
 
 
 (Define-Individual Start (Sit-Var) "Not supplied yet.")
-Var (?X) "Not supplied yet." :Def (And (Thing ?X)))
+Sit-Var (?X) "Not supplied yet." :Def (And (Thing ?X)))
 
 ;;; Start
 
