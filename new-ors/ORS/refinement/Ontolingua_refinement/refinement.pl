@@ -546,7 +546,7 @@ processLine(propositionalAA,[Pred,_,_,Position,_],Line) :-
 	write(NewLineName).
 
 
-processLine(propositionalAA,[Pred,_,ArgValue,Position,_],Line) :-
+processLine(propositionalAA,[Pred,ArgType,_,Position,_],Line) :-
 	name('(Define-Frame ',DefAx),
 	matchExpression([],DefAx,_,Line),
 	name(Pred,PredChars),
@@ -558,7 +558,7 @@ processLine(propositionalAA,[Pred,_,ArgValue,Position,_],Line) :-
 		matchExpression(Vars,EndVars,RestLine,AfterPred)
 	),
 	VarPosition is Position - 1,
-	insertNewVar([],Vars,VarPosition,NewVars,Pred,ArgValue),
+	insertNewVar([],Vars,VarPosition,NewVars,Pred,ArgType),
 	append(NewVars,EndVars,FullVars),
 	append(FullVars,RestLine,NewAfter),
 	append(BeforePred,PredChars,BeforeVars),
@@ -1351,7 +1351,7 @@ removeMarkers(Vars,GoodVars) :-
 removeMarkers(GoodVars,GoodVars).
 
 
-insertNewVar(BeforeVars,AfterVars,0,NewVars,Pred,ArgValue) :-
+insertNewVar(BeforeVars,AfterVars,0,NewVars,Pred,ArgType) :-
 	name(' ',Space),
 	(   matchExpression(ImmedBefore,Space,RestVars,AfterVars),
 		BeforeVars = GoodBefore
@@ -1367,7 +1367,7 @@ insertNewVar(BeforeVars,AfterVars,0,NewVars,Pred,ArgValue) :-
 	),
 	append(GoodBefore,ImmedBefore,FullBefore),
 	%% Register acceptable queries and start the server (using default port)
-	register_query(query(R,S), query(R,S,FullBefore,Pred,ArgValue)),
+	register_query(query(R,S), query(R,S,FullBefore,Pred,ArgType)),
 	register_query(evaluate(I), evaluate(I)),
 	register_query(shutdown, shutdown_serverpb),
 	start,
@@ -1378,20 +1378,20 @@ insertNewVar(BeforeVars,AfterVars,0,NewVars,Pred,ArgValue) :-
 	append(SpacedVars,Space,FullySpacedVars),
 	append(FullySpacedVars,RestVars,NewVars).
 
-insertNewVar(BeforeVars,AfterVars,Position,NewVars,Pred,ArgValue) :-
+insertNewVar(BeforeVars,AfterVars,Position,NewVars,Pred,ArgType) :-
 	name(' ',Space),
 	matchExpression(BeforeThis,Space,AfterThis,AfterVars),
 	NewPosition is Position - 1,
 	append(BeforeVars,BeforeThis,NewBefore),
-	insertNewVar(NewBefore,AfterThis,NewPosition,NewVars,Pred,ArgValue).	
+	insertNewVar(NewBefore,AfterThis,NewPosition,NewVars,Pred,ArgType).	
 
 
 %% Retrieve information of the new variable
-query(R1,R2,FullBefore,Pred,ArgValue) :-
+query(R1,R2,FullBefore,Pred,ArgType) :-
 	name(' ',Space),
 	name('(',LeftBracket),
 	name(')',RightBracket),
-	name(ArgValue,R1),
+	name(ArgType,R1),
 	name(Pred,PredChars),
 	append(PredChars,Space,Chars1),
 	append(Chars1,LeftBracket,Chars2),
