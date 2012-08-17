@@ -7,12 +7,13 @@
 
 import java.awt.*;
 import java.awt.event.*;
+import java.net.*;
 import se.sics.prologbeans.*;
 
 import javax.swing.*;
 
 /**
- * Client: 
+ * Client: the Java GUI of ORS
  *
  * @author Ruixiao Yu
  * 
@@ -23,6 +24,28 @@ public class Client implements ActionListener {
     private JTextField input = new JTextField(36);
     private JButton evaluate = new JButton("Enter");
     private PrologSession session = new PrologSession();
+    Thread thread;
+
+    private class SessionThread extends Thread {
+
+        public void run() {
+
+            boolean connection = false;
+            while (!connection) {
+                boolean exception = false;
+                try {
+                    session.connect();
+                } catch (Exception e) {
+                    exception = true;
+                }
+                if (!exception) {
+                    connection = true;
+                }
+            }
+
+            getQuery();
+        }
+    }
 
     public Client() throws java.io.IOException {
         text.setLineWrap(true);
@@ -44,14 +67,13 @@ public class Client implements ActionListener {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
 
-        session.connect();
-
         frame.setVisible(true);
 
-        getQuery();
+        thread = new SessionThread();
+        thread.start();
     }
 
-    public void getQuery() {
+    private void getQuery() {
         String message;
         try {
             QueryAnswer answer =
@@ -101,12 +123,13 @@ public class Client implements ActionListener {
                 message = inputText + '\n';
                 text.append(message);
                 input.setText("");
+
             } else {
                 message = "Error: " + answer.getError() + '\n';
                 text.append(message);
             }
         } catch (Exception e) {
-            message = "Error when querying Prolog Server: "
+            message = "Error when evaluation Prolog Server: "
                     + e.getMessage() + '\n';
             text.append(message);
             e.printStackTrace();
@@ -115,6 +138,8 @@ public class Client implements ActionListener {
         try {
             QueryAnswer answer =
                     session.executeQuery("shutdown");
+
+
         } catch (Exception e) {
             message = "Error when shutting down Prolog Server: "
                     + e.getMessage() + '\n';
@@ -122,6 +147,11 @@ public class Client implements ActionListener {
             e.printStackTrace();
         }
 
+        session.disconnect();
+        thread = null;
+
+        thread = new SessionThread();
+        thread.start();
     }
 
     public static void main(String[] args) throws java.io.IOException {

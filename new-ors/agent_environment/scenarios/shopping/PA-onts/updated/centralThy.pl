@@ -5,6 +5,7 @@ class(bookShopGroup,shoppingGroup).
 class(aiGroup,academicGroup).
 class(shoppingAgent,agent).
 class(dollars,currency).
+class(euros,currency).
 class(pseudoVar,confirmationNumber).
 class(start,sitVar).
 class(start,sitVar).
@@ -15,4 +16,4 @@ fact(registeredMember(shoppingAgent,aiGroup)).
 fact(chooseThing(shoppingAgent,ourMutualFriend)).
 fact(registeredMember(shoppingAgent,bookShopGroup)).
 fact(inBasket(shoppingAgent,ourMutualFriend,47899)).
-fact(money(shoppingAgent,MetaVar,100)).
+fact(money(shoppingAgent,euros,100)).

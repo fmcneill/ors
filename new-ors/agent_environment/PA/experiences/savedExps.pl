@@ -88,3 +88,25 @@ savedExps(_1709713,buy(shoppingAgent,ourMutualFriend),none).
 savedExps(_17027,expressingApproval(jerryTheBot),none).
 
 savedExps(_37308,appointing(jerryTheBot),none).
+
+savedExps(_394308,putInBasket(shoppingAgent,aiGroup,ourMutualFriend),none).
+
+savedExps(_921223,joinGroup(shoppingAgent,bookShopGroup),none).
+
+savedExps(_1269690,putInBasket(shoppingAgent,bookShopGroup,ourMutualFriend),none).
+
+savedExps(_1720213,buy(shoppingAgent,ourMutualFriend),none).
+
+savedExps(_394308,putInBasket(shoppingAgent,aiGroup,ourMutualFriend),none).
+
+savedExps(_921223,joinGroup(shoppingAgent,bookShopGroup),none).
+
+savedExps(_1269690,putInBasket(shoppingAgent,bookShopGroup,ourMutualFriend),none).
+
+savedExps(_394308,putInBasket(shoppingAgent,aiGroup,ourMutualFriend),none).
+
+savedExps(_921223,joinGroup(shoppingAgent,bookShopGroup),none).
+
+savedExps(_1269690,putInBasket(shoppingAgent,bookShopGroup,ourMutualFriend),none).
+
+savedExps(_1720213,buy(shoppingAgent,ourMutualFriend),none).
